@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start 14-Day Free Trial — Register Account | SYNCRA</title>
+  <meta name="description" content="Create your Syncra account. Start scheduling appointments automatically with 2-way calendar sync, staff management, and multi-channel reminders.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      background-color: var(--color-ivory);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .register-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+    .register-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      max-width: 580px;
+      width: 100%;
+      padding: 2.75rem 2.5rem;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header (<= 1024px: Logo + Hamburger Only) -->
+  <header class="site-header">
+    <div class="container-fluid px-3 px-lg-4 px-xl-5 header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
+        <span>SYNCRA<span class="dot">.</span></span>
+      </a>
+
+      <div class="desktop-nav-wrap">
+        <nav>
+          <ul class="desktop-nav-links">
+            <li class="dropdown">
+              <a href="index.html" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Home Views
+              </a>
+              <ul class="dropdown-menu shadow border-0 rounded-3 p-2">
+                <li><a class="dropdown-item py-2 fw-semibold" href="index.html"><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 — Classic SaaS</a></li>
+                <li><a class="dropdown-item py-2 fw-semibold" href="home-2.html"><i class="bi bi-cpu-fill me-2"></i> Home 2 — AI Autonomous</a></li>
+              </ul>
+            </li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About & Resources</a></li>
+          </ul>
+        </nav>
+        <div class="desktop-actions">
+          <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <button class="nav-tool-btn theme-toggle-btn" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          <a href="login.html" class="btn-krono-outline ms-2">Client Sign In</a>
+        </div>
+      </div>
+
+      <button class="hamburger-toggle" id="openMobileNav" aria-label="Open Navigation Menu">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer (<= 1024px) -->
+  <div class="mobile-drawer-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
+        <span>SYNCRA<span class="dot">.</span></span>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="nav-tool-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="mobile-drawer-close" id="closeMobileNav"><i class="bi bi-x-lg"></i></button>
+      </div>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link"><span><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 (Classic)</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="home-2.html" class="mobile-nav-link"><span><i class="bi bi-cpu-fill me-2 text-coral"></i> Home 2 (AI Autonomous)</span><span class="badge bg-danger rounded-pill">New</span></a></li>
+      <li><a href="features.html" class="mobile-nav-link"><span><i class="bi bi-stars me-2"></i> Features</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="industries.html" class="mobile-nav-link"><span><i class="bi bi-building me-2"></i> Industries</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="pricing.html" class="mobile-nav-link"><span><i class="bi bi-tag me-2"></i> Pricing Plans</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="about.html" class="mobile-nav-link"><span><i class="bi bi-info-circle me-2"></i> About & Resources</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="login.html" class="mobile-nav-link"><span><i class="bi bi-box-arrow-in-right me-2 text-primary"></i> Client / Staff Login</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="register.html" class="mobile-nav-link active"><span><i class="bi bi-person-plus-fill me-2 text-coral"></i> Register Practice</span><span class="badge bg-success rounded-pill">Free Trial</span></a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link"><span><i class="bi bi-grid-1x2-fill me-2 text-coral"></i> Business Dashboard</span><span class="badge bg-danger rounded-pill">Live App</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <a href="register.html" class="btn-krono-primary w-100 text-center">Start 14-Day Free Trial <i class="bi bi-arrow-right"></i></a>
+      <a href="login.html" class="btn-krono-dark w-100 text-center"><i class="bi bi-box-arrow-in-right"></i> Client Sign In</a>
+    </div>
+  </div>
+
+  <!-- Registration Main -->
+  <main class="register-container">
+    <div class="register-card">
+      <div class="text-center mb-4">
+        <div class="badge-tag coral mb-2">14-Day Full Access Trial</div>
+        <h3 class="fw-bold mb-1">Create Your Business Account</h3>
+        <p class="small text-muted mb-0">No credit card required • Instant 2-way calendar sync</p>
+      </div>
+
+      <form id="registrationForm" onsubmit="handleRegisterSubmit(event)">
+        <div class="row g-3 mb-3">
+          <div class="col-sm-6">
+            <label class="form-label small fw-bold text-muted">FIRST NAME</label>
+            <input type="text" class="form-control" placeholder="Evelyn" required value="Evelyn">
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label small fw-bold text-muted">LAST NAME</label>
+            <input type="text" class="form-control" placeholder="Reed" required value="Reed">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-bold text-muted">PRACTICE / BUSINESS NAME</label>
+          <input type="text" class="form-control" placeholder="e.g. Reed Specialist Clinic & Spa" required value="Reed Specialist Clinic">
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-sm-6">
+            <label class="form-label small fw-bold text-muted">INDUSTRY</label>
+            <select class="form-select" required>
+              <option selected>Healthcare & Clinics</option>
+              <option>Hair Salon & Beauty Spa</option>
+              <option>Consulting & Legal Advisory</option>
+              <option>Fitness Studio & Personal Trainer</option>
+              <option>Higher Education & Tutoring</option>
+              <option>Professional Agency</option>
+            </select>
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label small fw-bold text-muted">TEAM SIZE</label>
+            <select class="form-select">
+              <option>1 Solo Practitioner</option>
+              <option selected>2 – 5 Staff Members</option>
+              <option>6 – 20 Staff Members</option>
+              <option>20+ Enterprise</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-bold text-muted">WORK EMAIL ADDRESS</label>
+          <input type="email" class="form-control" placeholder="evelyn@reedclinic.com" required value="evelyn@reedclinic.com">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-bold text-muted">CREATE PASSWORD</label>
+          <input type="password" class="form-control" placeholder="Minimum 8 characters" required value="SecurePass2026!">
+        </div>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="termsCheck" checked required>
+          <label class="form-check-label small text-muted" for="termsCheck">
+            I agree to the <a href="#" class="text-coral">Terms of Service</a> and <a href="#" class="text-coral">HIPAA Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn-krono-primary w-100 py-3 mb-3" id="btnRegisterSubmit">
+          <span>Create Workspace & Start Free Trial</span> <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+
+      <div class="text-center mt-3">
+        <small class="text-muted">
+          Already have an account? <a href="login.html" class="fw-bold text-coral">Sign In Here</a>
+        </small>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-3 text-center text-muted small border-top bg-white">
+    © 2026 Syncra Inc. • 256-Bit SSL Encryption • HIPAA Compliant
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnRegisterSubmit');
+      btn.disabled = true;
+      btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span> Provisioning your workspace...`;
+
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 900);
+    }
+  </script>
+</body>
+</html>

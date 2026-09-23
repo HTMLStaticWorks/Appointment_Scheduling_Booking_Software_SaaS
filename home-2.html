@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNCRA (Home 2) — AI-Autonomous Appointment Intelligence & Scheduling</title>
+  <meta name="description" content="Syncra Home 2: Next-generation AI autonomous scheduling, high-density practitioner grids, real-time multi-calendar conflict resolution, and no-show prevention.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Frameworks & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Home 2 Unique Custom Touches */
+    .home2-hero {
+      background: radial-gradient(circle at 50% -20%, rgba(255, 107, 95, 0.12) 0%, rgba(247, 246, 242, 1) 65%);
+      padding: 5rem 0 7rem;
+      position: relative;
+    }
+    .ai-radar-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      padding: 0.45rem 1.15rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--color-ink);
+    }
+    .ai-radar-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #27C93F;
+      box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7);
+      animation: pulseRadar 2s infinite;
+    }
+    @keyframes pulseRadar {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(39, 201, 63, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 201, 63, 0); }
+    }
+    .grid-sync-board {
+      background: #17191C;
+      color: #F7F6F2;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-slate-dark);
+      padding: 2rem;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .sync-timeline-slot {
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .sync-timeline-slot:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--color-coral);
+      transform: translateX(4px);
+    }
+    .resource-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    }
+    .resource-card > *:last-child {
+      margin-top: auto;
+    }
+    .resource-card:hover {
+      border-color: var(--color-ink);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .interactive-conflict-box {
+      background: #FFFFFF;
+      border: 2px dashed var(--color-coral);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    }
+    .interactive-conflict-box > *:last-child {
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER
+       Responsive Rule: At Mobile, Tablet & <= 1024px: LOGO + HAMBURGER ONLY
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container-fluid px-3 px-lg-4 px-xl-5 header-container">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
+        <span>SYNCRA<span class="dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation (> 1024px) -->
+      <div class="desktop-nav-wrap">
+        <nav>
+          <ul class="desktop-nav-links">
+            <li class="dropdown">
+              <a href="index.html" class="active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Home Views
+              </a>
+              <ul class="dropdown-menu shadow border-0 rounded-3 p-2">
+                <li><a class="dropdown-item py-2 fw-semibold" href="index.html"><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 — Classic SaaS</a></li>
+                <li><a class="dropdown-item py-2 fw-bold text-coral active bg-light" href="home-2.html"><i class="bi bi-cpu-fill me-2"></i> Home 2 — AI Autonomous</a></li>
+              </ul>
+            </li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About & Resources</a></li>
+          </ul>
+        </nav>
+        <div class="desktop-actions">
+          <!-- RTL Direction Switcher -->
+          <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <!-- Theme Dark/Light Switcher -->
+          <button class="nav-tool-btn theme-toggle-btn" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <a href="login.html" class="btn-krono-ghost"><i class="bi bi-box-arrow-in-right"></i> Client Login</a>
+          <a href="dashboard.html" class="btn-krono-primary">Open Workspace <i class="bi bi-arrow-right-short"></i></a>
+        </div>
+      </div>
+
+      <!-- Hamburger Toggle Button (<= 1024px Only) -->
+      <button class="hamburger-toggle" id="openMobileNav" aria-label="Open Navigation Menu">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer (<= 1024px) -->
+  <div class="mobile-drawer-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
+        <span>SYNCRA<span class="dot">.</span></span>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="nav-tool-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="mobile-drawer-close" id="closeMobileNav"><i class="bi bi-x-lg"></i></button>
+      </div>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link"><span><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 (Classic)</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="home-2.html" class="mobile-nav-link active"><span><i class="bi bi-cpu-fill me-2 text-coral"></i> Home 2 (AI Autonomous)</span><span class="badge bg-danger rounded-pill">New</span></a></li>
+      <li><a href="features.html" class="mobile-nav-link"><span><i class="bi bi-stars me-2"></i> Features</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="industries.html" class="mobile-nav-link"><span><i class="bi bi-building me-2"></i> Industries</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="pricing.html" class="mobile-nav-link"><span><i class="bi bi-tag me-2"></i> Pricing Plans</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="about.html" class="mobile-nav-link"><span><i class="bi bi-info-circle me-2"></i> About & Resources</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="login.html" class="mobile-nav-link"><span><i class="bi bi-box-arrow-in-right me-2 text-primary"></i> Client / Staff Login</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="register.html" class="mobile-nav-link"><span><i class="bi bi-person-plus-fill me-2 text-coral"></i> Register Practice</span><span class="badge bg-success rounded-pill">Free Trial</span></a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link"><span><i class="bi bi-grid-1x2-fill me-2 text-coral"></i> Business Dashboard</span><span class="badge bg-danger rounded-pill">Live App</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <a href="register.html" class="btn-krono-primary w-100 text-center">Start 14-Day Free Trial <i class="bi bi-arrow-right"></i></a>
+      <a href="login.html" class="btn-krono-dark w-100 text-center"><i class="bi bi-box-arrow-in-right"></i> Client Sign In</a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HOME 2 SIGNATURE HERO
+       AI Autonomous Scheduling & Live Multi-Practitioner Grid
+       ========================================================================== -->
+  <section class="home2-hero">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center g-5">
+        
+        <!-- Left Hero Content -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="ai-radar-pill mb-3">
+            <span class="ai-radar-dot"></span>
+            <span>AI Autonomous Scheduling 2.0 • Zero Conflict Engine</span>
+          </div>
+
+          <h1 class="display-hero mb-3">
+            The intelligent engine behind <span class="text-coral">effortless booking.</span>
+          </h1>
+
+          <p class="lead-lg mb-4">
+            Stop checking 4 calendars and coordinating staff shifts manually. Syncra’s autonomous dispatch engine maps patient preferences, room sanitization buffers, and practitioner seniority instantly.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <a href="dashboard.html" class="btn-krono-primary">
+              <i class="bi bi-play-circle-fill"></i> Launch Live Dashboard
+            </a>
+            <button class="btn-krono-outline" onclick="openQuickBookModal('Instant AI Match Booking')">
+              <i class="bi bi-calendar2-plus"></i> Simulate Client Booking
+            </button>
+          </div>
+
+          <div class="row g-3 pt-2">
+            <div class="col-sm-4">
+              <div class="fw-bold text-dark fs-5 mb-0">&lt; 200ms</div>
+              <small class="text-muted">Sync Latency</small>
+            </div>
+            <div class="col-sm-4">
+              <div class="fw-bold text-coral fs-5 mb-0">94.8%</div>
+              <small class="text-muted">Attendance Rate</small>
+            </div>
+            <div class="col-sm-4">
+              <div class="fw-bold text-dark fs-5 mb-0">31%</div>
+              <small class="text-muted">After-Hours Bookings</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero High-Density Dark SaaS Canvas -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+          <div class="grid-sync-board">
+            <!-- Top Status Bar -->
+            <div class="d-flex align-items-center justify-content-between pb-3 border-bottom border-secondary mb-3">
+              <div class="d-flex align-items-center gap-2">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #FF6B5F;"></span>
+                <span class="text-white fw-bold small">Syncra Neural Dispatch</span>
+              </div>
+              <span class="badge bg-secondary text-light" style="font-size: 0.7rem;">Live Multi-Staff Grid</span>
+            </div>
+
+            <!-- Practitioner Grid Tabs -->
+            <div class="d-flex gap-2 mb-3 overflow-x-auto pb-1">
+              <button class="btn btn-sm btn-light py-1 px-2 fw-bold" style="font-size: 0.75rem;"><i class="bi bi-person-check-fill text-success"></i> Dr. Evelyn (Physician)</button>
+              <button class="btn btn-sm btn-dark border-secondary py-1 px-2 text-muted" style="font-size: 0.75rem;">Marcus C. (Lab A)</button>
+              <button class="btn btn-sm btn-dark border-secondary py-1 px-2 text-muted" style="font-size: 0.75rem;">Chloe L. (Strategy)</button>
+            </div>
+
+            <!-- Dynamic Live Slot Stream -->
+            <div class="d-flex flex-column gap-2 mb-3">
+              <div class="sync-timeline-slot">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="fw-bold text-coral small">09:00 AM</span>
+                  <div>
+                    <div class="text-white fw-bold small">Sophia Martinez</div>
+                    <small class="text-muted">Comprehensive Consultation • Room 102</small>
+                  </div>
+                </div>
+                <span class="badge bg-success bg-opacity-25 text-success" style="font-size: 0.7rem;">Confirmed</span>
+              </div>
+
+              <div class="sync-timeline-slot">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="fw-bold text-light small">10:30 AM</span>
+                  <div>
+                    <div class="text-white fw-bold small">Team Clinical Review</div>
+                    <small class="text-muted">Multi-practitioner sync</small>
+                  </div>
+                </div>
+                <span class="badge bg-primary bg-opacity-25 text-info" style="font-size: 0.7rem;">Internal</span>
+              </div>
+
+              <!-- Animated Auto-Match Available Slot -->
+              <div class="sync-timeline-slot" style="background: rgba(255, 107, 95, 0.15); border-color: #FF6B5F;">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="fw-bold text-coral small">12:00 PM</span>
+                  <div>
+                    <div class="text-coral fw-bold small">AI Open Window (Auto-Balanced)</div>
+                    <small class="text-light">15 min sanitization buffer applied</small>
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-danger py-0 px-2 fw-bold" style="font-size: 0.75rem;" onclick="openQuickBookModal('12:00 PM Auto-Match')">Quick Book</button>
+              </div>
+
+              <div class="sync-timeline-slot">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="fw-bold text-light small">02:00 PM</span>
+                  <div>
+                    <div class="text-white fw-bold small">Liam Vance</div>
+                    <small class="text-muted">Diagnostic Follow-up • SMS Reminded</small>
+                  </div>
+                </div>
+                <span class="badge bg-warning bg-opacity-25 text-warning" style="font-size: 0.7rem;">Deposit Paid</span>
+              </div>
+            </div>
+
+            <!-- Bottom Multi-Calendar Sync Indicator -->
+            <div class="p-2 rounded bg-dark border border-secondary d-flex align-items-center justify-content-between text-muted small">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-arrow-repeat text-coral"></i>
+                <span style="font-size: 0.75rem;">Google, Outlook & Apple Calendars in sync</span>
+              </div>
+              <span class="text-success fw-bold" style="font-size: 0.75rem;">0 Conflicts</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION: REAL-TIME CONFLICT RESOLUTION SIMULATOR
+       ========================================================================== -->
+  <section class="section-py bg-white border-top border-bottom">
+    <div class="container">
+      <div class="row text-center justify-content-center section-title-wrap">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="badge-tag coral mb-2">Autonomous Conflict Prevention</div>
+          <h2 class="display-title">Zero Overlaps. Zero Headaches.</h2>
+          <p class="lead-lg">When external events change in Google Calendar or Outlook, Syncra instantly re-routes incoming bookings.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="interactive-conflict-box">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h5 class="fw-bold mb-0 text-dark"><i class="bi bi-shield-exclamation text-coral"></i> Live Scenario: Conflict Prevented</h5>
+              <span class="badge bg-danger rounded-pill">Blocked Slot</span>
+            </div>
+            <p class="small text-muted mb-3">
+              Doctor adds an emergency surgery in Outlook at 11:00 AM. In <strong>180 milliseconds</strong>, Syncra blocks that time across all public booking widgets and notifies waiting clients with alternate slots.
+            </p>
+            <div class="p-3 bg-light rounded-3 border d-flex align-items-center justify-content-between mb-3">
+              <div>
+                <div class="fw-bold small text-dark">External Calendar Sync Event</div>
+                <small class="text-muted">Dr. Evelyn Reed • Outlook 365</small>
+              </div>
+              <span class="badge bg-dark">Overridden</span>
+            </div>
+            <button class="btn-krono-dark btn-sm-krono w-100" onclick="alert('Simulation: Outlook 365 Calendar Synced in 140ms with 0 errors.')">
+              Trigger Sync Simulation
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="d-flex flex-column gap-3">
+            <div class="p-4 bg-light rounded-4 border">
+              <h5 class="fw-bold mb-2"><i class="bi bi-clock-history text-coral"></i> Intelligent Buffer Calculations</h5>
+              <p class="small text-muted mb-0">Automatically inserts 10, 15, or 30-minute buffers between bookings so your staff never run late or feel rushed.</p>
+            </div>
+            <div class="p-4 bg-light rounded-4 border">
+              <h5 class="fw-bold mb-2"><i class="bi bi-globe-americas text-coral"></i> Global Timezone Auto-Lock</h5>
+              <p class="small text-muted mb-0">Calculates daylight savings and time zones automatically for overseas clients booking consultations or advisory calls.</p>
+            </div>
+            <div class="p-4 bg-light rounded-4 border">
+              <h5 class="fw-bold mb-2"><i class="bi bi-credit-card-check text-coral"></i> Automated Card-On-File Protection</h5>
+              <p class="small text-muted mb-0">Captures deposits or credit card authorizations upfront to virtually eliminate last-minute cancellations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION: RESOURCE & ROOM ALLOCATION GRID
+       ========================================================================== -->
+  <section class="section-py bg-light">
+    <div class="container">
+      <div class="row text-center justify-content-center section-title-wrap">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="badge-tag dark mb-2">Multi-Resource Logistics</div>
+          <h2 class="display-title">Staff, Rooms & Equipment in Perfect Harmony</h2>
+          <p class="lead-lg">A booking requires more than just a person. Syncra reserves examination rooms, salon chairs, and specialized medical machines simultaneously.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="resource-card h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="p-3 bg-dark text-white rounded-3 fs-4"><i class="bi bi-door-open-fill"></i></div>
+              <div>
+                <h5 class="fw-bold mb-0">Examination Room 102</h5>
+                <small class="text-success fw-bold">● Occupied until 10:00 AM</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-0">Assigned automatically to Dr. Evelyn Reed with 15-minute sanitization cooldown lock.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="resource-card h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="p-3 bg-coral text-white rounded-3 fs-4"><i class="bi bi-activity"></i></div>
+              <div>
+                <h5 class="fw-bold mb-0">Diagnostic Lab B</h5>
+                <small class="text-primary fw-bold">● Next: 12:00 PM (Liam V.)</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-0">High-capacity analyzer reserved exclusively for Marcus Chen’s diagnostic appointment.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="resource-card h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="p-3 bg-mint text-dark rounded-3 fs-4"><i class="bi bi-camera-video-fill"></i></div>
+              <div>
+                <h5 class="fw-bold mb-0">Telehealth Studio C</h5>
+                <small class="text-success fw-bold">● Free for Instant Booking</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-0">Generates unique encrypted video rooms for remote consultations automatically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CTA BANNER
+       ========================================================================== -->
+  <section class="section-py bg-dark text-white text-center position-relative overflow-hidden" style="background-color: #17191C !important;">
+    <div class="container position-relative" style="z-index: 2;" data-aos="zoom-in">
+      <div class="badge-tag coral mb-3">Ready to Upgrade?</div>
+      <h2 class="display-title text-white mb-3">Every Appointment. Automatically Organized.</h2>
+      <p class="lead-lg text-white-50 mx-auto mb-4" style="max-width: 650px; color: #D1D8E0 !important;">
+        Switch to the most elegant scheduling software on the market. Start your 14-day free trial today.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="dashboard.html" class="btn-krono-primary">
+          <i class="bi bi-rocket-takeoff-fill"></i> Launch Business Dashboard
+        </a>
+        <a href="pricing.html" class="btn-krono-outline text-white border-light" style="color: #FFFFFF !important; border-color: rgba(255,255,255,0.6) !important;">
+          View Pricing Plans
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a href="index.html" class="brand-logo mb-3 d-inline-flex text-white">
+            <div class="logo-icon bg-coral text-white"><i class="bi bi-calendar4-week"></i></div>
+            <span>SYNCRA<span class="dot">.</span></span>
+          </a>
+          <p class="text-white-50 pe-lg-4" style="color: #D1D8E0 !important;">“Time, Designed.” Autonomous appointment scheduling and multi-practitioner calendar dispatch.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 (Classic)</a></li>
+            <li><a href="home-2.html">Home 2 (AI Autonomous)</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Industries</div>
+          <ul class="footer-links">
+            <li><a href="industries.html">Healthcare</a></li>
+            <li><a href="industries.html">Beauty & Salons</a></li>
+            <li><a href="industries.html">Consulting</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Workspace</div>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Live Dashboard</a></li>
+            <li><a href="dashboard.html">Calendar Grid</a></li>
+            <li><a href="dashboard.html">Billing Center</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About Syncra</a></li>
+            <li><a href="about.html">Manifesto</a></li>
+            <li><a href="about.html">Guides</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Syncra Inc. “Every Appointment. Automatically Organized.”</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="custom-modal-backdrop" id="kronoBookingModal">
+    <div class="custom-modal-dialog p-4">
+      <div class="d-flex align-items-center justify-content-between pb-3 border-bottom mb-4">
+        <div class="d-flex align-items-center gap-2">
+          <div class="logo-icon bg-coral text-white p-2 rounded-3"><i class="bi bi-calendar-plus"></i></div>
+          <h5 class="mb-0 fw-bold">Live Appointment Simulator</h5>
+        </div>
+        <button class="btn btn-sm btn-outline-secondary rounded-circle close-booking-modal" style="width: 32px; height: 32px; padding: 0;"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div id="modalBookingForm">
+        <div class="mb-3">
+          <label class="form-label fw-bold small text-muted">SERVICE</label>
+          <input type="text" class="form-control fw-bold" id="modalServiceName" value="AI Autonomous Booking" readonly>
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-6"><label class="form-label fw-bold small text-muted">DATE</label><input type="date" class="form-control" value="2026-09-24"></div>
+          <div class="col-6"><label class="form-label fw-bold small text-muted">TIME</label><select class="form-select"><option>09:00 AM</option><option selected>12:00 PM</option><option>02:30 PM</option></select></div>
+        </div>
+        <div class="mb-3"><label class="form-label fw-bold small text-muted">NAME</label><input type="text" class="form-control" value="Sophia Martinez"></div>
+        <div class="mb-4"><label class="form-label fw-bold small text-muted">EMAIL</label><input type="email" class="form-control" value="sophia@example.com"></div>
+        <button class="btn-krono-primary w-100 py-3" id="submitBookingDemoBtn">Confirm & Auto-Dispatch <i class="bi bi-check2-circle"></i></button>
+      </div>
+      <div id="modalBookingSuccess" style="display: none;" class="text-center py-4">
+        <div class="w-16 h-16 bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 2rem;"><i class="bi bi-check-lg"></i></div>
+        <h4 class="fw-bold mb-2">Slot Reserved!</h4>
+        <p class="text-muted small mb-4">Practitioner and examination room successfully locked.</p>
+        <button class="btn-krono-dark w-100 close-booking-modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Dashboard Workspace — SYNCRA</title>
+  <meta name="description" content="Syncra Business Dashboard SaaS Workspace. Manage real-time appointments, staff schedules, FullCalendar grid, reminder workflows, and billing.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5, Icons, FullCalendar, Chart.js -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Mobile Drawer Overlay for <= 1024px -->
+    <div class="dash-sidebar-overlay" id="dashSidebarOverlay"></div>
+
+    <!-- ==========================================================================
+         DASHBOARD SIDEBAR
+         Items: Overview, Calendar, Appointments, Customers, Staff, Availability,
+                Analytics, Reminders, Billing, Settings
+         ========================================================================== -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <!-- Header / Org brand -->
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="dash-brand">
+          <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
+          <span>SYNCRA<span class="text-coral">.</span></span>
+        </a>
+        <button class="btn btn-sm btn-dark text-muted d-lg-none" id="closeDashSidebar">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <div class="workspace-badge d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F;"></span>
+            <span class="text-white fw-bold">Evelyn Reed Clinic</span>
+          </div>
+          <span class="badge bg-secondary" style="font-size: 0.65rem;">PRO</span>
+        </div>
+      </div>
+
+      <!-- Navigation List -->
+      <nav class="dash-nav">
+        <div class="dash-nav-section-label">Main Workspace</div>
+
+        <a href="#overview" class="dash-nav-item active" data-tab="overview">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-speedometer2"></i>
+            <span class="dash-nav-label">Overview</span>
+          </div>
+          <span class="dash-count-pill">Live</span>
+        </a>
+
+        <a href="#calendar" class="dash-nav-item" data-tab="calendar">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-calendar3"></i>
+            <span class="dash-nav-label">Calendar</span>
+          </div>
+          <span class="dash-count-pill">4 Today</span>
+        </a>
+
+        <a href="#appointments" class="dash-nav-item" data-tab="appointments">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-calendar-check"></i>
+            <span class="dash-nav-label">Appointments</span>
+          </div>
+          <span class="dash-count-pill">24</span>
+        </a>
+
+        <a href="#customers" class="dash-nav-item" data-tab="customers">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-people"></i>
+            <span class="dash-nav-label">Customers</span>
+          </div>
+          <span class="dash-count-pill">1.2k</span>
+        </a>
+
+        <a href="#staff" class="dash-nav-item" data-tab="staff">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-person-badge"></i>
+            <span class="dash-nav-label">Staff</span>
+          </div>
+          <span class="dash-count-pill">18</span>
+        </a>
+
+        <a href="#availability" class="dash-nav-item" data-tab="availability">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-clock-history"></i>
+            <span class="dash-nav-label">Availability</span>
+          </div>
+        </a>
+
+        <div class="dash-nav-section-label mt-2">Intelligence & Ops</div>
+
+        <a href="#analytics" class="dash-nav-item" data-tab="analytics">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-graph-up-arrow"></i>
+            <span class="dash-nav-label">Analytics</span>
+          </div>
+        </a>
+
+        <a href="#reminders" class="dash-nav-item" data-tab="reminders">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-chat-dots"></i>
+            <span class="dash-nav-label">Reminders</span>
+          </div>
+          <span class="badge bg-danger rounded-pill" style="font-size: 0.65rem;">SMS Active</span>
+        </a>
+
+        <a href="#billing" class="dash-nav-item" data-tab="billing">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-credit-card"></i>
+            <span class="dash-nav-label">Billing</span>
+          </div>
+        </a>
+
+        <a href="#settings" class="dash-nav-item" data-tab="settings">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-gear"></i>
+            <span class="dash-nav-label">Settings</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="dash-sidebar-footer">
+        <div class="user-profile-widget">
+          <div class="d-flex align-items-center gap-2">
+            <img src="image/Leadership Portraits0.jpg" alt="User" class="user-avatar-mini">
+            <div>
+              <div class="text-white fw-bold" style="font-size: 0.8125rem;">Dr. Evelyn Reed</div>
+              <small class="text-muted" style="font-size: 0.7rem;">Practice Admin</small>
+            </div>
+          </div>
+          <a href="index.html" class="text-muted" title="Exit to Public Site">
+            <i class="bi bi-box-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         DASHBOARD MAIN CONTAINER & TOPBAR
+         ========================================================================== -->
+    <main class="dash-main">
+      <!-- Topbar Header -->
+      <header class="dash-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="dash-icon-btn dash-mobile-toggle" id="dashMobileToggle" aria-label="Toggle Sidebar Menu">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h5 class="mb-0 fw-bold" id="dashCurrentViewTitle">Dashboard Overview</h5>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <!-- RTL Direction Switcher -->
+          <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <!-- Theme Dark/Light Switcher -->
+          <button class="nav-tool-btn theme-toggle-btn" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <button class="dash-icon-btn position-relative" title="Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+          </button>
+
+          <button class="btn-krono-primary p-0 rounded-circle" style="width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.15rem;" onclick="openQuickBookModal('New Dashboard Appointment')" title="New Appointment" aria-label="New Appointment">
+            <i class="bi bi-plus-lg"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- ==========================================================================
+           TAB VIEWS
+           ========================================================================== -->
+      <div class="dash-view-content">
+
+        <!-- TAB 1: OVERVIEW -->
+        <div class="dash-tab-pane" id="tab-overview">
+          
+          <!-- KPI Summary Cards (Required 4 Metrics) -->
+          <div class="dash-kpi-grid">
+            <!-- 1. Today's Appointments: 24 -->
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-label">Today's Appointments</span>
+                <div class="kpi-icon-pill bg-danger bg-opacity-10 text-coral">
+                  <i class="bi bi-calendar-event"></i>
+                </div>
+              </div>
+              <div class="kpi-value">24</div>
+              <div class="kpi-trend positive">
+                <i class="bi bi-arrow-up-short"></i> +4 from yesterday
+              </div>
+            </div>
+
+            <!-- 2. Bookings This Month: 1,284 -->
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-label">Bookings This Month</span>
+                <div class="kpi-icon-pill bg-primary bg-opacity-10 text-primary">
+                  <i class="bi bi-bar-chart-fill"></i>
+                </div>
+              </div>
+              <div class="kpi-value">1,284</div>
+              <div class="kpi-trend positive">
+                <i class="bi bi-arrow-up-short"></i> +18.2% vs last month
+              </div>
+            </div>
+
+            <!-- 3. Attendance Rate: 94.8% -->
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-label">Attendance Rate</span>
+                <div class="kpi-icon-pill bg-success bg-opacity-10 text-success">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+              </div>
+              <div class="kpi-value">94.8%</div>
+              <div class="kpi-trend positive">
+                <i class="bi bi-shield-check"></i> High show-rate benchmark
+              </div>
+            </div>
+
+            <!-- 4. Revenue: $18,420 -->
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span class="kpi-label">Revenue This Month</span>
+                <div class="kpi-icon-pill bg-warning bg-opacity-10 text-warning">
+                  <i class="bi bi-currency-dollar"></i>
+                </div>
+              </div>
+              <div class="kpi-value">$18,420</div>
+              <div class="kpi-trend positive">
+                <i class="bi bi-arrow-up-short"></i> +$2,840 ahead of target
+              </div>
+            </div>
+          </div>
+
+          <!-- Weekly Booking Chart & Staff Availability -->
+          <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+              <div class="dash-table-card p-4 h-100">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <div>
+                    <h5 class="fw-bold mb-0">Weekly Booking & Attendance Volume</h5>
+                    <small class="text-muted">Confirmed client appointments vs automated reminders delivered</small>
+                  </div>
+                  <span class="badge-tag dark" style="font-size: 0.75rem;">Real-time Data</span>
+                </div>
+                <div style="height: 280px; position: relative;">
+                  <canvas id="weeklyBookingsChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="dash-table-card p-4 h-100">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h5 class="fw-bold mb-0">Staff Availability</h5>
+                  <span class="badge bg-success rounded-pill">12 / 18 Online</span>
+                </div>
+
+                <div class="d-flex flex-column gap-2">
+                  <div class="staff-card mb-1">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="staff-avatar-wrap">
+                        <img src="image/Leadership Portraits0.jpg" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;" alt="Dr. Reed">
+                        <span class="staff-status-dot online"></span>
+                      </div>
+                      <div>
+                        <div class="fw-bold" style="font-size: 0.85rem;">Dr. Evelyn Reed</div>
+                        <small class="text-muted">Senior Physician • In Session</small>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-dark border">Room 102</span>
+                  </div>
+
+                  <div class="staff-card mb-1">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="staff-avatar-wrap">
+                        <img src="image/Leadership Portraits1.jpg" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;" alt="Marcus">
+                        <span class="staff-status-dot busy"></span>
+                      </div>
+                      <div>
+                        <div class="fw-bold" style="font-size: 0.85rem;">Marcus Chen</div>
+                        <small class="text-muted">Diagnostics • Next: 12:00 PM</small>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-dark border">Lab B</span>
+                  </div>
+
+                  <div class="staff-card mb-1">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="staff-avatar-wrap">
+                        <img src="image/Leadership Portraits2.jpg" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;" alt="Chloe">
+                        <span class="staff-status-dot online"></span>
+                      </div>
+                      <div>
+                        <div class="fw-bold" style="font-size: 0.85rem;">Chloe Laurent</div>
+                        <small class="text-muted">Consultant • Available</small>
+                      </div>
+                    </div>
+                    <span class="badge bg-success text-white">Free Now</span>
+                  </div>
+                </div>
+
+                <div class="mt-3 pt-3 border-top d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Auto-balancing active</small>
+                  <a href="#staff" class="text-coral fw-bold small" onclick="document.querySelector('[data-tab=staff]').click()">View All 18 Staff →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Appointments & Reminder Activity -->
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <div class="dash-table-card">
+                <div class="p-3 border-bottom d-flex align-items-center justify-content-between">
+                  <h5 class="fw-bold mb-0">Upcoming Schedule for Today</h5>
+                  <span class="badge-tag coral" style="font-size: 0.75rem;">Today, Sep 23</span>
+                </div>
+                <div class="table-responsive">
+                  <table class="table-custom">
+                    <thead>
+                      <tr>
+                        <th>Time</th>
+                        <th>Client</th>
+                        <th>Service</th>
+                        <th>Staff</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="fw-bold text-coral">09:00 AM</td>
+                        <td>
+                          <div class="fw-bold">Sophia Martinez</div>
+                          <small class="text-muted">sophia.m@domain.com</small>
+                        </td>
+                        <td>Comprehensive Consultation</td>
+                        <td>Dr. Evelyn Reed</td>
+                        <td><span class="status-badge confirmed"><i class="bi bi-check2"></i> Confirmed</span></td>
+                        <td><button class="btn btn-sm btn-outline-dark py-0 px-2" onclick="alert('Client Room Link: meet.syncra.app/r/829')">Open Link</button></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">10:30 AM</td>
+                        <td>
+                          <div class="fw-bold">Team Operations</div>
+                          <small class="text-muted">Internal Room Sync</small>
+                        </td>
+                        <td>Staff Sync</td>
+                        <td>All Practitioners</td>
+                        <td><span class="status-badge completed">In Progress</span></td>
+                        <td><button class="btn btn-sm btn-outline-dark py-0 px-2">Details</button></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold text-coral">12:00 PM</td>
+                        <td>
+                          <div class="fw-bold">Liam Vance</div>
+                          <small class="text-muted">+1 (555) 019-2831</small>
+                        </td>
+                        <td>Diagnostic Follow-up</td>
+                        <td>Marcus Chen</td>
+                        <td><span class="status-badge confirmed"><i class="bi bi-chat-check-fill text-success"></i> SMS Sent</span></td>
+                        <td><button class="btn btn-sm btn-outline-dark py-0 px-2" onclick="alert('Reschedule request initiated.')">Reschedule</button></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold text-coral">02:00 PM</td>
+                        <td>
+                          <div class="fw-bold">David Kim</div>
+                          <small class="text-muted">david.k@innovate.co</small>
+                        </td>
+                        <td>Executive Strategy Audit</td>
+                        <td>Chloe Laurent</td>
+                        <td><span class="status-badge pending">Deposit Paid ($50)</span></td>
+                        <td><button class="btn btn-sm btn-outline-dark py-0 px-2">Check In</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reminder Activity & Plan Status -->
+            <div class="col-lg-4">
+              <div class="dash-table-card p-4 mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h5 class="fw-bold mb-0">Live Reminder Activity</h5>
+                  <i class="bi bi-broadcast text-coral"></i>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex gap-2">
+                    <i class="bi bi-chat-text-fill text-coral mt-1"></i>
+                    <div>
+                      <div class="fw-bold small">SMS Delivered to Liam Vance</div>
+                      <small class="text-muted">“Reply 1 to confirm your 12:00 PM appointment” • 2 min ago</small>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <i class="bi bi-envelope-check-fill text-mint-dark mt-1"></i>
+                    <div>
+                      <div class="fw-bold small">Intake Form Completed by Sophia M.</div>
+                      <small class="text-muted">Medical questionnaire uploaded • 14 min ago</small>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <i class="bi bi-calendar2-check-fill text-primary mt-1"></i>
+                    <div>
+                      <div class="fw-bold small">Google Calendar Sync Triggered</div>
+                      <small class="text-muted">2 new slots mirrored in under 200ms • 28 min ago</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Subscription Status Widget -->
+              <div class="dash-table-card p-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-danger rounded-pill">Professional Plan</span>
+                  <small class="text-muted">Renews Oct 15, 2026</small>
+                </div>
+                <div class="fw-bold text-dark">Monthly Booking Capacity</div>
+                <div class="usage-progress-bar">
+                  <div class="usage-progress-fill" style="width: 51.3%;"></div>
+                </div>
+                <div class="d-flex justify-content-between text-muted small mb-3">
+                  <span>1,284 Bookings used</span>
+                  <span>2,500 Limit</span>
+                </div>
+                <button class="btn btn-sm btn-outline-dark w-100" onclick="document.querySelector('[data-tab=billing]').click()">
+                  Manage Billing & Invoices
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: CALENDAR (FullCalendar.js Integration) -->
+        <div class="dash-tab-pane d-none" id="tab-calendar">
+          <div class="dash-table-card p-4">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+              <div>
+                <h4 class="fw-bold mb-0">Master Calendar Grid</h4>
+                <small class="text-muted">Drag and drop events, click to edit, or drag across empty blocks to add new bookings.</small>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-sm btn-outline-dark" onclick="window.calendarInstance.today()"><i class="bi bi-calendar2-day"></i> Today</button>
+                <button class="btn btn-sm btn-dark" onclick="openQuickBookModal('Manual Calendar Booking')"><i class="bi bi-plus-lg"></i> Add Event</button>
+              </div>
+            </div>
+
+            <!-- FullCalendar Target -->
+            <div id="kronoFullCalendar" style="min-height: 650px;"></div>
+          </div>
+        </div>
+
+        <!-- TAB 3: APPOINTMENTS MANAGEMENT -->
+        <div class="dash-tab-pane d-none" id="tab-appointments">
+          <div class="dash-table-card p-4">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+              <div>
+                <h4 class="fw-bold mb-0">All Appointments Directory</h4>
+                <small class="text-muted">Filter, export, reschedule, or cancel bookings across all staff.</small>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-sm btn-outline-secondary" onclick="alert('Exporting CSV of 1,284 appointments...')"><i class="bi bi-download"></i> Export CSV</button>
+                <button class="btn-krono-primary btn-sm-krono" onclick="openQuickBookModal('New Appointment')"><i class="bi bi-plus"></i> New Booking</button>
+              </div>
+            </div>
+
+            <!-- Filter Pills & Search -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="d-flex flex-wrap gap-2">
+                  <button class="btn btn-sm btn-dark appt-filter-pill active" data-status="all">All (24)</button>
+                  <button class="btn btn-sm btn-outline-secondary appt-filter-pill" data-status="confirmed">Confirmed (18)</button>
+                  <button class="btn btn-sm btn-outline-secondary appt-filter-pill" data-status="inprogress">In Progress (3)</button>
+                  <button class="btn btn-sm btn-outline-secondary appt-filter-pill" data-status="cancelled">Cancelled (3)</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <input type="text" id="appointmentSearchInput" class="form-control form-control-sm" placeholder="Search by customer name, email, or practitioner...">
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table-custom">
+                <thead>
+                  <tr>
+                    <th>Ref #</th>
+                    <th>Date & Time</th>
+                    <th>Customer Name</th>
+                    <th>Assigned Staff</th>
+                    <th>Service & Price</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="appointmentTableBody">
+                  <tr class="appointment-data-row" data-status="confirmed">
+                    <td><code>#APT-8491</code></td>
+                    <td class="fw-bold">Today, 09:00 AM</td>
+                    <td>
+                      <div class="fw-bold">Sophia Martinez</div>
+                      <small class="text-muted">VIP Retainer Client</small>
+                    </td>
+                    <td>Dr. Evelyn Reed</td>
+                    <td>Comprehensive Consultation ($180)</td>
+                    <td><span class="status-badge confirmed">Confirmed</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-dark" onclick="alert('Appointment details: Sophia Martinez - Room 102')">View</button>
+                    </td>
+                  </tr>
+
+                  <tr class="appointment-data-row" data-status="inprogress">
+                    <td><code>#APT-8492</code></td>
+                    <td class="fw-bold">Today, 10:30 AM</td>
+                    <td>
+                      <div class="fw-bold">Liam Vance</div>
+                      <small class="text-muted">First-time Lead</small>
+                    </td>
+                    <td>Marcus Chen</td>
+                    <td>Diagnostic Follow-up ($120)</td>
+                    <td><span class="status-badge completed">In Progress</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-dark" onclick="alert('Managing intake for Liam Vance')">View</button>
+                    </td>
+                  </tr>
+
+                  <tr class="appointment-data-row" data-status="confirmed">
+                    <td><code>#APT-8493</code></td>
+                    <td class="fw-bold">Today, 02:00 PM</td>
+                    <td>
+                      <div class="fw-bold">David Kim</div>
+                      <small class="text-muted">Corporate Plan</small>
+                    </td>
+                    <td>Chloe Laurent</td>
+                    <td>Executive Strategy ($250)</td>
+                    <td><span class="status-badge confirmed">Confirmed</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-dark">View</button>
+                    </td>
+                  </tr>
+
+                  <tr class="appointment-data-row" data-status="cancelled">
+                    <td><code>#APT-8490</code></td>
+                    <td class="fw-bold text-muted">Yesterday, 04:00 PM</td>
+                    <td>
+                      <div class="fw-bold text-muted">Alexander Wright</div>
+                      <small class="text-muted">Cancelled with 24h notice</small>
+                    </td>
+                    <td>Dr. Evelyn Reed</td>
+                    <td>Initial Intake ($100)</td>
+                    <td><span class="status-badge cancelled">Cancelled</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-secondary" onclick="openQuickBookModal('Reschedule Alexander')">Rebook</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: CUSTOMERS -->
+        <div class="dash-tab-pane d-none" id="tab-customers">
+          <div class="dash-table-card p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <h4 class="fw-bold mb-0">Client Directory</h4>
+                <small class="text-muted">Manage client records, booking history, lifetime revenue, and communication preferences.</small>
+              </div>
+              <button class="btn-krono-primary btn-sm-krono" onclick="alert('Client profile creation form opened.')"><i class="bi bi-person-plus"></i> Add New Client</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table-custom">
+                <thead>
+                  <tr>
+                    <th>Client Name</th>
+                    <th>Contact Info</th>
+                    <th>Total Bookings</th>
+                    <th>Lifetime Spend</th>
+                    <th>Last Visit</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <img src="image/Leadership Portraits.jpg" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;" alt="Client">
+                        <div class="fw-bold">Sophia Martinez</div>
+                      </div>
+                    </td>
+                    <td>sophia.m@domain.com • +1 (555) 019-2831</td>
+                    <td class="fw-bold">14 Bookings</td>
+                    <td class="fw-bold text-success">$2,450.00</td>
+                    <td>Today (09:00 AM)</td>
+                    <td><button class="btn btn-sm btn-outline-dark">History</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <img src="image/Leadership Portraits1.jpg" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;" alt="Client">
+                        <div class="fw-bold">Liam Vance</div>
+                      </div>
+                    </td>
+                    <td>liam.v@vance.io • +1 (555) 018-9922</td>
+                    <td class="fw-bold">4 Bookings</td>
+                    <td class="fw-bold text-success">$620.00</td>
+                    <td>Today (12:00 PM)</td>
+                    <td><button class="btn btn-sm btn-outline-dark">History</button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <img src="image/Leadership Portraits2.jpg" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;" alt="Client">
+                        <div class="fw-bold">Elena Rostova</div>
+                      </div>
+                    </td>
+                    <td>elena@rostova.com • +1 (555) 014-4411</td>
+                    <td class="fw-bold">8 Bookings</td>
+                    <td class="fw-bold text-success">$1,890.00</td>
+                    <td>Sep 18, 2026</td>
+                    <td><button class="btn btn-sm btn-outline-dark">History</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: STAFF -->
+        <div class="dash-tab-pane d-none" id="tab-staff">
+          <div class="dash-table-card p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <h4 class="fw-bold mb-0">Practitioners & Team Roster</h4>
+                <small class="text-muted">18 Active Team Members with individualized working hours and round-robin weights.</small>
+              </div>
+              <button class="btn-krono-primary btn-sm-krono" onclick="alert('Staff invite dialog opened.')"><i class="bi bi-person-plus-fill"></i> Invite Staff Member</button>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="p-3 border rounded-3 bg-light text-center h-100 d-flex flex-column">
+                  <img src="image/Leadership Portraits0.jpg" class="staff-avatar-card-img mx-auto mb-2" alt="Dr. Reed">
+                  <h6 class="fw-bold mb-0">Dr. Evelyn Reed</h6>
+                  <small class="text-coral fw-bold">Chief Physician • Admin</small>
+                  <div class="mt-2 small text-muted">Weekly Load: 32/35 hrs</div>
+                  <button class="btn btn-sm btn-outline-dark w-100 mt-auto" onclick="alert('Configuring shift hours for Dr. Reed')">Edit Hours</button>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="p-3 border rounded-3 bg-light text-center h-100 d-flex flex-column">
+                  <img src="image/Leadership Portraits1.jpg" class="staff-avatar-card-img mx-auto mb-2" alt="Marcus">
+                  <h6 class="fw-bold mb-0">Marcus Chen</h6>
+                  <small class="text-dark fw-bold">Diagnostic Specialist</small>
+                  <div class="mt-2 small text-muted">Weekly Load: 28/40 hrs</div>
+                  <button class="btn btn-sm btn-outline-dark w-100 mt-auto">Edit Hours</button>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="p-3 border rounded-3 bg-light text-center h-100 d-flex flex-column">
+                  <img src="image/Leadership Portraits2.jpg" class="staff-avatar-card-img mx-auto mb-2" alt="Chloe">
+                  <h6 class="fw-bold mb-0">Chloe Laurent</h6>
+                  <small class="text-dark fw-bold">Senior Consultant</small>
+                  <div class="mt-2 small text-muted">Weekly Load: 22/30 hrs</div>
+                  <button class="btn btn-sm btn-outline-dark w-100 mt-auto">Edit Hours</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: AVAILABILITY & BOOKING RULES -->
+        <div class="dash-tab-pane d-none" id="tab-availability">
+          <div class="dash-table-card p-4">
+            <h4 class="fw-bold mb-1">Weekly Operating Hours & Buffer Rules</h4>
+            <p class="text-muted small mb-4">Define default business hours, sanitization buffers, and minimum booking notice.</p>
+
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <h6 class="fw-bold mb-3">Weekly Schedule:</h6>
+                <div class="d-flex flex-column gap-2">
+                  <div class="d-flex justify-content-between align-items-center p-2 border rounded bg-white">
+                    <span class="fw-bold">Monday – Friday</span>
+                    <span class="badge bg-light text-dark border">08:30 AM – 06:00 PM</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center p-2 border rounded bg-white">
+                    <span class="fw-bold">Saturday</span>
+                    <span class="badge bg-light text-dark border">09:00 AM – 02:00 PM</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center p-2 border rounded bg-light text-muted">
+                    <span>Sunday</span>
+                    <span class="badge bg-secondary">Closed (Blackout)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <h6 class="fw-bold mb-3">Buffer & Booking Rules:</h6>
+                <div class="mb-3">
+                  <label class="form-label small fw-bold">Buffer time after each appointment:</label>
+                  <select class="form-select form-select-sm">
+                    <option>0 minutes</option>
+                    <option selected>15 minutes (Sanitization & notes)</option>
+                    <option>30 minutes</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small fw-bold">Minimum scheduling notice:</label>
+                  <select class="form-select form-select-sm">
+                    <option>Instant (0 hours)</option>
+                    <option selected>2 hours in advance</option>
+                    <option>24 hours in advance</option>
+                  </select>
+                </div>
+                <button class="btn-krono-primary btn-sm-krono" onclick="alert('Rules saved successfully!')">Save Availability Rules</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 7: ANALYTICS & REPORTS -->
+        <div class="dash-tab-pane d-none" id="tab-analytics">
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <div class="dash-table-card p-4">
+                <h5 class="fw-bold mb-1">Monthly Revenue Trends</h5>
+                <small class="text-muted d-block mb-3">Gross revenue generated through online appointments & upfront deposits</small>
+                <div style="height: 300px; position: relative;">
+                  <canvas id="revenueTrendChart"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="dash-table-card p-4">
+                <h5 class="fw-bold mb-1">Peak Booking Time Slots</h5>
+                <small class="text-muted d-block mb-3">Distribution of client appointment requests</small>
+                <div style="height: 250px; position: relative;">
+                  <canvas id="peakHoursChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 8: REMINDERS & AUTOMATION WORKFLOW -->
+        <div class="dash-tab-pane d-none" id="tab-reminders">
+          <div class="dash-table-card p-4">
+            <h4 class="fw-bold mb-1">Multi-Channel Reminder Templates</h4>
+            <p class="text-muted small mb-4">Customize SMS and email reminders with dynamic client tags.</p>
+
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label fw-bold small">SELECT WORKFLOW TEMPLATE</label>
+                  <select class="form-select" id="reminderTemplateSelect">
+                    <option value="standard" selected>24-Hour Pre-Visit SMS (Standard)</option>
+                    <option value="urgent">2-Hour Urgent Check-in</option>
+                    <option value="followup">Post-Visit Review & Feedback Link</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label fw-bold small">SMS MESSAGE TEXT</label>
+                  <textarea class="form-control" id="reminderCustomMessage" rows="4">Hi {client_name}, your appointment with {staff_name} is confirmed for {appointment_time}. Reply 1 to Confirm or 2 to Reschedule.</textarea>
+                  <small class="text-muted">Available tags: {client_name}, {staff_name}, {appointment_time}, {feedback_link}</small>
+                </div>
+
+                <button class="btn-krono-primary btn-sm-krono" onclick="alert('SMS workflow saved & armed.')">Save Workflow</button>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="p-4 bg-dark rounded-4 text-white">
+                  <div class="d-flex justify-content-between mb-3">
+                    <span class="badge bg-danger">Live SMS Mobile Preview</span>
+                    <small class="text-white-50" style="color: #A9B7C6 !important;">Recipient: +1 (555) 019-2831</small>
+                  </div>
+                  <div class="p-3 bg-secondary bg-opacity-25 rounded-3 border border-secondary" id="reminderLiveSmsPreview" style="font-size: 0.9rem; line-height: 1.5; color: #FFFFFF !important;">
+                    Hi Sophia Martinez, your appointment with Dr. Evelyn Reed is confirmed for Today at 2:30 PM. Reply 1 to Confirm or 2 to Reschedule.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 9: BILLING (Required Complete Section) -->
+        <div class="dash-tab-pane d-none" id="tab-billing">
+          <div class="row g-4">
+            <!-- Current Plan & Usage -->
+            <div class="col-lg-7">
+              <div class="dash-table-card p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div>
+                    <h4 class="fw-bold mb-0">Current Subscription</h4>
+                    <span class="badge bg-danger rounded-pill mt-1">Professional Tier</span>
+                  </div>
+                  <div class="text-end">
+                    <div class="h3 fw-bold mb-0">$49<span class="fs-6 text-muted">/mo</span></div>
+                    <small class="text-muted">Renews Oct 15, 2026</small>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-bold mb-1">
+                    <span>Monthly Appointments Used:</span>
+                    <span>1,284 / 2,500 (51.3%)</span>
+                  </div>
+                  <div class="usage-progress-bar">
+                    <div class="usage-progress-fill" style="width: 51.3%;"></div>
+                  </div>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <div class="p-3 bg-light rounded-3 border">
+                      <small class="text-muted">Staff Seats Active</small>
+                      <div class="fw-bold fs-5">5 of 5 Seats</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="p-3 bg-light rounded-3 border">
+                      <small class="text-muted">SMS Credits Remaining</small>
+                      <div class="fw-bold fs-5 text-coral">3,716 SMS</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Method & Invoices -->
+              <div class="dash-table-card p-4">
+                <h5 class="fw-bold mb-3">Payment Method on File</h5>
+                <div class="d-flex align-items-center justify-content-between p-3 border rounded-3 bg-light mb-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-credit-card-2-front-fill text-primary fs-2"></i>
+                    <div>
+                      <div class="fw-bold">Mastercard ending in •••• 4892</div>
+                      <small class="text-muted">Expires 08/29 • Primary Billing Card</small>
+                    </div>
+                  </div>
+                  <button class="btn btn-sm btn-outline-dark" onclick="alert('Payment method edit modal opened.')">Update</button>
+                </div>
+
+                <h5 class="fw-bold mb-2">Invoice History</h5>
+                <div class="table-responsive">
+                  <table class="table table-sm align-middle">
+                    <thead>
+                      <tr>
+                        <th>Invoice</th>
+                        <th>Billing Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Receipt</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>#INV-2026-09</code></td>
+                        <td>Sep 15, 2026</td>
+                        <td class="fw-bold">$49.00</td>
+                        <td><span class="badge bg-success">Paid</span></td>
+                        <td><a href="#" class="text-coral" onclick="alert('Downloading PDF Invoice #INV-2026-09')"><i class="bi bi-file-earmark-pdf"></i> PDF</a></td>
+                      </tr>
+                      <tr>
+                        <td><code>#INV-2026-08</code></td>
+                        <td>Aug 15, 2026</td>
+                        <td class="fw-bold">$49.00</td>
+                        <td><span class="badge bg-success">Paid</span></td>
+                        <td><a href="#" class="text-coral" onclick="alert('Downloading PDF Invoice #INV-2026-08')"><i class="bi bi-file-earmark-pdf"></i> PDF</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upgrade/Downgrade Options -->
+            <div class="col-lg-5">
+              <div class="card-krono-dark p-4 h-100">
+                <div class="badge-tag coral mb-3">Scale Your Operations</div>
+                <h4 class="text-white fw-bold mb-2">Upgrade to Business Plan</h4>
+                <p class="text-white-50 small mb-4" style="color: #D1D8E0 !important;">Need unlimited staff seats, HIPAA BAA compliance, and white-label branding on your custom domain?</p>
+
+                <div class="d-flex align-items-baseline gap-2 mb-4">
+                  <span class="display-title text-white" style="font-size: 2.5rem;">$99</span>
+                  <span class="text-white-50" style="color: #A9B7C6 !important;">/month</span>
+                </div>
+
+                <ul class="list-unstyled d-flex flex-column gap-2 text-light small mb-4">
+                  <li><i class="bi bi-check2 text-coral me-2"></i> Unlimited staff seats (add all 18 doctors)</li>
+                  <li><i class="bi bi-check2 text-coral me-2"></i> Signed HIPAA Business Associate Agreement</li>
+                  <li><i class="bi bi-check2 text-coral me-2"></i> Custom domain: <code>book.evelynreed.com</code></li>
+                  <li><i class="bi bi-check2 text-coral me-2"></i> Dedicated account concierge & 99.99% SLA</li>
+                </ul>
+
+                <button class="btn-krono-primary w-100 py-3 btn-upgrade-plan" data-plan="Business">
+                  Upgrade Workspace Now <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 10: SETTINGS -->
+        <div class="dash-tab-pane d-none" id="tab-settings">
+          <div class="dash-table-card p-4">
+            <h4 class="fw-bold mb-1">Company & Workspace Settings</h4>
+            <p class="text-muted small mb-4">Manage your public booking URL slug, brand styling, and API webhooks.</p>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">PRACTICE / BUSINESS NAME</label>
+                <input type="text" class="form-control" value="Dr. Evelyn Reed Clinic & Associates">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">PUBLIC BOOKING SLUG</label>
+                <div class="input-group">
+                  <span class="input-group-text">syncra.app/book/</span>
+                  <input type="text" class="form-control" value="evelyn-reed-clinic">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">DEFAULT TIMEZONE</label>
+                <select class="form-select">
+                  <option selected>America/New_York (EST, UTC-4)</option>
+                  <option>America/Chicago (CST, UTC-5)</option>
+                  <option>America/Los_Angeles (PST, UTC-7)</option>
+                  <option>Europe/London (GMT, UTC+1)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">CURRENCY</label>
+                <select class="form-select">
+                  <option selected>USD ($) - United States Dollar</option>
+                  <option>EUR (€) - Euro</option>
+                  <option>GBP (£) - British Pound</option>
+                  <option>CAD ($) - Canadian Dollar</option>
+                </select>
+              </div>
+              <div class="col-12 mt-4">
+                <button class="btn-krono-primary btn-sm-krono" onclick="alert('Settings saved successfully!')">Save Preferences</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Global Modal for Dashboard -->
+  <div class="custom-modal-backdrop" id="kronoBookingModal">
+    <div class="custom-modal-dialog p-4">
+      <div class="d-flex align-items-center justify-content-between pb-3 border-bottom mb-4">
+        <div class="d-flex align-items-center gap-2">
+          <div class="logo-icon bg-coral text-white p-2 rounded-3"><i class="bi bi-calendar-plus"></i></div>
+          <h5 class="mb-0 fw-bold">Add New Appointment</h5>
+        </div>
+        <button class="btn btn-sm btn-outline-secondary rounded-circle close-booking-modal" style="width: 32px; height: 32px; padding: 0;"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div id="modalBookingForm">
+        <div class="mb-3">
+          <label class="form-label fw-bold small text-muted">SERVICE</label>
+          <input type="text" class="form-control fw-bold" id="modalServiceName" value="Clinical Consultation">
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-6"><label class="form-label fw-bold small text-muted">DATE</label><input type="date" class="form-control" value="2026-09-24"></div>
+          <div class="col-6"><label class="form-label fw-bold small text-muted">TIME</label><select class="form-select"><option>09:00 AM</option><option selected>11:30 AM</option><option>03:00 PM</option></select></div>
+        </div>
+        <div class="mb-3"><label class="form-label fw-bold small text-muted">CLIENT NAME</label><input type="text" class="form-control" value="Sarah Jenkins"></div>
+        <div class="mb-4"><label class="form-label fw-bold small text-muted">ASSIGNED STAFF</label><select class="form-select"><option selected>Dr. Evelyn Reed</option><option>Marcus Chen</option><option>Chloe Laurent</option></select></div>
+        <button class="btn-krono-primary w-100 py-3" id="submitBookingDemoBtn">Create Appointment <i class="bi bi-check2-circle"></i></button>
+      </div>
+      <div id="modalBookingSuccess" style="display: none;" class="text-center py-4">
+        <div class="w-16 h-16 bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 2rem;"><i class="bi bi-check-lg"></i></div>
+        <h4 class="fw-bold mb-2">Appointment Created!</h4>
+        <p class="text-muted small mb-4">Added to calendar grid and staff notified.</p>
+        <button class="btn-krono-dark w-100 close-booking-modal">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Bootstrap 5, Chart.js, FullCalendar.js, Dashboard Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
