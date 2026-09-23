@@ -6,7 +6,8 @@
   <title>SYNCRA (Home 2) — AI-Autonomous Appointment Intelligence & Scheduling</title>
   <meta name="description" content="Syncra Home 2: Next-generation AI autonomous scheduling, high-density practitioner grids, real-time multi-calendar conflict resolution, and no-show prevention.">
   
-  <!-- Fonts -->
+  <!-- Favicon / Fonts -->
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -116,7 +117,7 @@
        Responsive Rule: At Mobile, Tablet & <= 1024px: LOGO + HAMBURGER ONLY
        ========================================================================== -->
   <header class="site-header">
-    <div class="container-fluid px-3 px-lg-4 px-xl-5 header-container">
+    <div class="container header-container">
       <!-- Logo -->
       <a href="index.html" class="brand-logo">
         <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
@@ -128,12 +129,12 @@
         <nav>
           <ul class="desktop-nav-links">
             <li class="dropdown">
-              <a href="index.html" class="active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="#" class="active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 Home Views
               </a>
               <ul class="dropdown-menu shadow border-0 rounded-3 p-2">
                 <li><a class="dropdown-item py-2 fw-semibold" href="index.html"><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 — Classic SaaS</a></li>
-                <li><a class="dropdown-item py-2 fw-bold text-coral active bg-light" href="home-2.html"><i class="bi bi-cpu-fill me-2"></i> Home 2 — AI Autonomous</a></li>
+                <li><a class="dropdown-item py-2 fw-bold text-coral active" href="home-2.html"><i class="bi bi-cpu-fill me-2"></i> Home 2 — AI Autonomous</a></li>
               </ul>
             </li>
             <li><a href="features.html">Features</a></li>
@@ -184,20 +185,22 @@
     </div>
 
     <ul class="mobile-nav-list">
-      <li><a href="index.html" class="mobile-nav-link"><span><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 (Classic)</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li class="mobile-nav-section-title">HOME VIEWS</li>
+      <li><a href="index.html" class="mobile-nav-link"><span><i class="bi bi-layout-text-window-reverse me-2 text-coral"></i> Home 1 (Classic SaaS)</span><i class="bi bi-chevron-right text-muted"></i></a></li>
       <li><a href="home-2.html" class="mobile-nav-link active"><span><i class="bi bi-cpu-fill me-2 text-coral"></i> Home 2 (AI Autonomous)</span><span class="badge bg-danger rounded-pill">New</span></a></li>
+      <li class="mobile-nav-section-title">NAVIGATION</li>
       <li><a href="features.html" class="mobile-nav-link"><span><i class="bi bi-stars me-2"></i> Features</span><i class="bi bi-chevron-right text-muted"></i></a></li>
       <li><a href="industries.html" class="mobile-nav-link"><span><i class="bi bi-building me-2"></i> Industries</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="pricing.html" class="mobile-nav-link"><span><i class="bi bi-tag me-2"></i> Pricing Plans</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="pricing.html" class="mobile-nav-link"><span><i class="bi bi-tag me-2"></i> Pricing</span><i class="bi bi-chevron-right text-muted"></i></a></li>
       <li><a href="about.html" class="mobile-nav-link"><span><i class="bi bi-info-circle me-2"></i> About & Resources</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="login.html" class="mobile-nav-link"><span><i class="bi bi-box-arrow-in-right me-2 text-primary"></i> Client / Staff Login</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="register.html" class="mobile-nav-link"><span><i class="bi bi-person-plus-fill me-2 text-coral"></i> Register Practice</span><span class="badge bg-success rounded-pill">Free Trial</span></a></li>
-      <li><a href="dashboard.html" class="mobile-nav-link"><span><i class="bi bi-grid-1x2-fill me-2 text-coral"></i> Business Dashboard</span><span class="badge bg-danger rounded-pill">Live App</span></a></li>
     </ul>
 
     <div class="mobile-drawer-actions">
-      <a href="register.html" class="btn-krono-primary w-100 text-center">Start 14-Day Free Trial <i class="bi bi-arrow-right"></i></a>
-      <a href="login.html" class="btn-krono-dark w-100 text-center"><i class="bi bi-box-arrow-in-right"></i> Client Sign In</a>
+      <a href="dashboard.html" class="btn-krono-primary w-100 text-center">Open Workspace <i class="bi bi-arrow-right-short"></i></a>
+      <a href="login.html" class="btn-krono-dark w-100 text-center"><i class="bi bi-box-arrow-in-right"></i> Client Login</a>
+      <div class="text-center mt-2">
+        <small class="text-muted"><i class="bi bi-shield-check text-success"></i> 14-Day Free Trial • No Credit Card</small>
+      </div>
     </div>
   </div>
 
@@ -234,17 +237,23 @@
           </div>
 
           <div class="row g-3 pt-2">
-            <div class="col-sm-4">
-              <div class="fw-bold text-dark fs-5 mb-0">&lt; 200ms</div>
-              <small class="text-muted">Sync Latency</small>
+            <div class="col-4">
+              <div class="hero-stat-item">
+                <div class="hero-stat-val">&lt; 200ms</div>
+                <div class="hero-stat-lbl">Sync Latency</div>
+              </div>
             </div>
-            <div class="col-sm-4">
-              <div class="fw-bold text-coral fs-5 mb-0">94.8%</div>
-              <small class="text-muted">Attendance Rate</small>
+            <div class="col-4">
+              <div class="hero-stat-item">
+                <div class="hero-stat-val highlight">94.8%</div>
+                <div class="hero-stat-lbl">Attendance Rate</div>
+              </div>
             </div>
-            <div class="col-sm-4">
-              <div class="fw-bold text-dark fs-5 mb-0">31%</div>
-              <small class="text-muted">After-Hours Bookings</small>
+            <div class="col-4">
+              <div class="hero-stat-item">
+                <div class="hero-stat-val">31%</div>
+                <div class="hero-stat-lbl">After-Hours Bookings</div>
+              </div>
             </div>
           </div>
         </div>
@@ -404,8 +413,8 @@
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="resource-card h-100">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <div class="p-3 bg-dark text-white rounded-3 fs-4"><i class="bi bi-door-open-fill"></i></div>
-              <div>
+              <div class="p-3 bg-dark text-white rounded-3 fs-4 d-inline-flex align-items-center justify-content-center" style="width: 54px; height: 54px; flex-shrink: 0;"><i class="bi bi-door-open-fill"></i></div>
+              <div class="text-start">
                 <h5 class="fw-bold mb-0">Examination Room 102</h5>
                 <small class="text-success fw-bold">● Occupied until 10:00 AM</small>
               </div>
@@ -417,8 +426,8 @@
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="resource-card h-100">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <div class="p-3 bg-coral text-white rounded-3 fs-4"><i class="bi bi-activity"></i></div>
-              <div>
+              <div class="p-3 bg-coral text-white rounded-3 fs-4 d-inline-flex align-items-center justify-content-center" style="background-color: var(--color-coral) !important; color: #FFFFFF !important; width: 54px; height: 54px; flex-shrink: 0;"><i class="bi bi-activity"></i></div>
+              <div class="text-start">
                 <h5 class="fw-bold mb-0">Diagnostic Lab B</h5>
                 <small class="text-primary fw-bold">● Next: 12:00 PM (Liam V.)</small>
               </div>
@@ -430,8 +439,8 @@
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
           <div class="resource-card h-100">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <div class="p-3 bg-mint text-dark rounded-3 fs-4"><i class="bi bi-camera-video-fill"></i></div>
-              <div>
+              <div class="p-3 bg-mint text-dark rounded-3 fs-4 d-inline-flex align-items-center justify-content-center" style="background-color: var(--color-mint) !important; color: #17191C !important; width: 54px; height: 54px; flex-shrink: 0;"><i class="bi bi-camera-video-fill"></i></div>
+              <div class="text-start">
                 <h5 class="fw-bold mb-0">Telehealth Studio C</h5>
                 <small class="text-success fw-bold">● Free for Instant Booking</small>
               </div>
@@ -470,48 +479,71 @@
       <div class="row g-5">
         <div class="col-lg-4">
           <a href="index.html" class="brand-logo mb-3 d-inline-flex text-white">
-            <div class="logo-icon bg-coral text-white"><i class="bi bi-calendar4-week"></i></div>
+            <div class="logo-icon bg-coral text-white">
+              <i class="bi bi-calendar4-week"></i>
+            </div>
             <span>SYNCRA<span class="dot">.</span></span>
           </a>
-          <p class="text-white-50 pe-lg-4" style="color: #D1D8E0 !important;">“Time, Designed.” Autonomous appointment scheduling and multi-practitioner calendar dispatch.</p>
+          <p class="text-white-50 pe-lg-4" style="color: #D1D8E0 !important;">
+            “Time, Designed.” The next-generation appointment scheduling & booking platform built for modern service businesses.
+          </p>
+          <div class="d-flex gap-3 text-white-50 mt-3">
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="GitHub"><i class="bi bi-github fs-5"></i></a>
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="YouTube"><i class="bi bi-youtube fs-5"></i></a>
+          </div>
         </div>
+
         <div class="col-6 col-lg-2">
-          <div class="footer-title">Pages</div>
+          <div class="footer-title">Platform</div>
           <ul class="footer-links">
-            <li><a href="index.html">Home 1 (Classic)</a></li>
-            <li><a href="home-2.html">Home 2 (AI Autonomous)</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="features.html">Smart Scheduling</a></li>
+            <li><a href="features.html">Calendar Sync</a></li>
+            <li><a href="features.html">Staff Availability</a></li>
+            <li><a href="features.html">Multi-Channel Reminders</a></li>
+            <li><a href="features.html">Payment Gateways</a></li>
           </ul>
         </div>
+
         <div class="col-6 col-lg-2">
           <div class="footer-title">Industries</div>
           <ul class="footer-links">
-            <li><a href="industries.html">Healthcare</a></li>
-            <li><a href="industries.html">Beauty & Salons</a></li>
-            <li><a href="industries.html">Consulting</a></li>
+            <li><a href="industries.html">Healthcare & Clinics</a></li>
+            <li><a href="industries.html">Salons & Spas</a></li>
+            <li><a href="industries.html">Consulting & Legal</a></li>
+            <li><a href="industries.html">Fitness & Studios</a></li>
+            <li><a href="industries.html">Higher Education</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-2">
-          <div class="footer-title">Workspace</div>
-          <ul class="footer-links">
-            <li><a href="dashboard.html">Live Dashboard</a></li>
-            <li><a href="dashboard.html">Calendar Grid</a></li>
-            <li><a href="dashboard.html">Billing Center</a></li>
-          </ul>
-        </div>
+
         <div class="col-6 col-lg-2">
           <div class="footer-title">Company</div>
           <ul class="footer-links">
             <li><a href="about.html">About Syncra</a></li>
-            <li><a href="about.html">Manifesto</a></li>
-            <li><a href="about.html">Guides</a></li>
+            <li><a href="about.html">Leadership & Story</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="about.html">Customer Guides</a></li>
+            <li><a href="about.html">Security & HIPAA</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Workspace</div>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Live Dashboard</a></li>
+            <li><a href="dashboard.html">Client Portal</a></li>
+            <li><a href="dashboard.html">Calendar Grid</a></li>
+            <li><a href="dashboard.html">Billing Center</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Syncra Inc. “Every Appointment. Automatically Organized.”</div>
+        <div>© 2026 Syncra Inc. “Every Appointment. Automatically Organized.” All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3 mt-2 mt-md-0">
+          <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-2 py-1 small">● Systems Operational</span>
+        </div>
       </div>
     </div>
   </footer>

@@ -374,7 +374,7 @@ function initIndustrySwitcher() {
                     </div>
                     <div class="text-end">
                       <div style="font-weight: 800; font-size: 1.05rem;">${srv.price}</div>
-                      <button class="btn btn-sm btn-outline-dark mt-1" style="font-size: 0.75rem; font-weight: 700; border-radius: 20px; padding: 0.2rem 0.75rem;">
+                      <button class="btn btn-sm btn-outline-dark industry-slot-btn mt-1" style="font-size: 0.75rem; font-weight: 700; border-radius: 20px; padding: 0.25rem 0.85rem;">
                         Select Slot
                       </button>
                     </div>
@@ -549,3 +549,23 @@ window.openQuickBookModal = function(serviceOrTime) {
     modal.classList.add('active');
   }
 };
+
+window.togglePasswordVisibility = function(inputId, btnEl) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  const icon = btnEl ? btnEl.querySelector('i') : null;
+  if (input.type === 'password') {
+    input.type = 'text';
+    if (icon) {
+      icon.classList.remove('bi-eye');
+      icon.classList.add('bi-eye-slash');
+    }
+  } else {
+    input.type = 'password';
+    if (icon) {
+      icon.classList.remove('bi-eye-slash');
+      icon.classList.add('bi-eye');
+    }
+  }
+};
+

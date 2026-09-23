@@ -6,7 +6,8 @@
   <title>Client & Business Login — SYNCRA</title>
   <meta name="description" content="Sign in to your Syncra account. Access your appointments, staff schedules, calendar sync, and business dashboard.">
   
-  <!-- Fonts -->
+  <!-- Favicon / Fonts -->
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +36,7 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-xl);
-      max-width: 480px;
+      max-width: 500px;
       width: 100%;
       padding: 2.5rem 2.25rem;
       position: relative;
@@ -46,7 +47,7 @@
       padding: 0.35rem;
       border-radius: var(--radius-pill);
       border: 1px solid var(--color-border);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
     .auth-role-tab {
       flex: 1;
@@ -102,89 +103,41 @@
       border-color: var(--color-ink);
       color: var(--color-ink);
     }
+    [data-theme="dark"] .btn-social-auth {
+      background: #181B20;
+      color: #FFFFFF;
+      border-color: #2C313A;
+    }
+    [data-theme="dark"] .btn-social-auth:hover {
+      background: #242932;
+      border-color: var(--color-coral);
+      color: #FFFFFF;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Site Header (<= 1024px: Logo + Hamburger Only) -->
-  <header class="site-header">
-    <div class="container-fluid px-3 px-lg-4 px-xl-5 header-container">
+  <!-- Clean Minimal Header without Complex Navbar -->
+  <header class="site-header py-3">
+    <div class="container d-flex align-items-center justify-content-between">
       <a href="index.html" class="brand-logo">
-        <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
+        <div class="logo-icon bg-coral text-white"><i class="bi bi-calendar4-week"></i></div>
         <span>SYNCRA<span class="dot">.</span></span>
       </a>
 
-      <div class="desktop-nav-wrap">
-        <nav>
-          <ul class="desktop-nav-links">
-            <li class="dropdown">
-              <a href="index.html" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Home Views
-              </a>
-              <ul class="dropdown-menu shadow border-0 rounded-3 p-2">
-                <li><a class="dropdown-item py-2 fw-semibold" href="index.html"><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 — Classic SaaS</a></li>
-                <li><a class="dropdown-item py-2 fw-semibold" href="home-2.html"><i class="bi bi-cpu-fill me-2"></i> Home 2 — AI Autonomous</a></li>
-              </ul>
-            </li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="about.html">About & Resources</a></li>
-          </ul>
-        </nav>
-        <div class="desktop-actions">
-          <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
-            <i class="bi bi-arrow-left-right"></i>
-          </button>
-          <button class="nav-tool-btn theme-toggle-btn" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
-            <i class="bi bi-moon-stars"></i>
-          </button>
-          <a href="register.html" class="btn-krono-outline ms-2">Start Free Trial</a>
-        </div>
-      </div>
-
-      <button class="hamburger-toggle" id="openMobileNav" aria-label="Open Navigation Menu">
-        <i class="bi bi-list fs-4"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer (<= 1024px) -->
-  <div class="mobile-drawer-overlay" id="mobileNavOverlay"></div>
-  <div class="mobile-drawer" id="mobileNavDrawer">
-    <div class="mobile-drawer-header">
-      <a href="index.html" class="brand-logo">
-        <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
-        <span>SYNCRA<span class="dot">.</span></span>
-      </a>
       <div class="d-flex align-items-center gap-2">
-        <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL">
+        <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
           <i class="bi bi-arrow-left-right"></i>
         </button>
-        <button class="nav-tool-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+        <button class="nav-tool-btn theme-toggle-btn" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
           <i class="bi bi-moon-stars"></i>
         </button>
-        <button class="mobile-drawer-close" id="closeMobileNav"><i class="bi bi-x-lg"></i></button>
+        <a href="index.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 ms-2 text-decoration-none">
+          <i class="bi bi-arrow-left me-1"></i> Back to Home
+        </a>
       </div>
     </div>
-
-    <ul class="mobile-nav-list">
-      <li><a href="index.html" class="mobile-nav-link"><span><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 (Classic)</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="home-2.html" class="mobile-nav-link"><span><i class="bi bi-cpu-fill me-2 text-coral"></i> Home 2 (AI Autonomous)</span><span class="badge bg-danger rounded-pill">New</span></a></li>
-      <li><a href="features.html" class="mobile-nav-link"><span><i class="bi bi-stars me-2"></i> Features</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="industries.html" class="mobile-nav-link"><span><i class="bi bi-building me-2"></i> Industries</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="pricing.html" class="mobile-nav-link"><span><i class="bi bi-tag me-2"></i> Pricing Plans</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="about.html" class="mobile-nav-link"><span><i class="bi bi-info-circle me-2"></i> About & Resources</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="login.html" class="mobile-nav-link active"><span><i class="bi bi-box-arrow-in-right me-2 text-primary"></i> Client / Staff Login</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="register.html" class="mobile-nav-link"><span><i class="bi bi-person-plus-fill me-2 text-coral"></i> Register Practice</span><span class="badge bg-success rounded-pill">Free Trial</span></a></li>
-      <li><a href="dashboard.html" class="mobile-nav-link"><span><i class="bi bi-grid-1x2-fill me-2 text-coral"></i> Business Dashboard</span><span class="badge bg-danger rounded-pill">Live App</span></a></li>
-    </ul>
-
-    <div class="mobile-drawer-actions">
-      <a href="register.html" class="btn-krono-primary w-100 text-center">Start 14-Day Free Trial <i class="bi bi-arrow-right"></i></a>
-      <a href="login.html" class="btn-krono-dark w-100 text-center"><i class="bi bi-box-arrow-in-right"></i> Client Sign In</a>
-    </div>
-  </div>
+  </header>
 
   <!-- Login Form Container -->
   <main class="auth-container">
@@ -205,13 +158,16 @@
         </button>
       </div>
 
-      <!-- Quick SSO Buttons -->
+      <!-- Social SSO Buttons (Google, Microsoft 365, Apple ID) -->
       <div class="d-flex flex-column gap-2 mb-3">
         <a href="dashboard.html" class="btn-social-auth">
           <i class="bi bi-google text-danger fs-5"></i> Continue with Google Workspace
         </a>
         <a href="dashboard.html" class="btn-social-auth">
           <i class="bi bi-microsoft text-primary fs-5"></i> Continue with Microsoft 365
+        </a>
+        <a href="dashboard.html" class="btn-social-auth">
+          <i class="bi bi-apple fs-5"></i> Continue with Apple ID
         </a>
       </div>
 
@@ -237,6 +193,9 @@
           <div class="input-group">
             <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
             <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" value="••••••••••••" required>
+            <button class="btn btn-outline-secondary password-toggle-btn" type="button" onclick="togglePasswordVisibility('loginPassword', this)" title="Toggle password visibility">
+              <i class="bi bi-eye"></i>
+            </button>
           </div>
         </div>
 
@@ -259,9 +218,10 @@
         </div>
       </form>
 
+      <!-- Register Link Below -->
       <div class="text-center mt-4">
         <small class="text-muted">
-          Don't have an account? <a href="pricing.html" class="fw-bold text-dark">Start 14-Day Free Trial</a>
+          Don't have an account? <a href="register.html" class="fw-bold text-coral ms-1">Create an Account / Start Free Trial</a>
         </small>
       </div>
     </div>

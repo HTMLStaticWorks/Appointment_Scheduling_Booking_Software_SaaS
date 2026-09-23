@@ -7,6 +7,7 @@
   <meta name="description" content="Syncra is the premier appointment scheduling & booking SaaS for modern businesses. Effortlessly coordinate calendars, staff, payments, and multi-channel reminders.">
   
   <!-- Favicon / Fonts -->
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +25,7 @@
        Strict Responsive Rule: At Mobile, Tablet & <= 1024px: LOGO + HAMBURGER ONLY
        ========================================================================== -->
   <header class="site-header">
-    <div class="container-fluid px-3 px-lg-4 px-xl-5 header-container">
+    <div class="container header-container">
       <!-- Logo -->
       <a href="index.html" class="brand-logo" id="headerBrandLogo">
         <div class="logo-icon">
@@ -38,11 +39,11 @@
         <nav>
           <ul class="desktop-nav-links">
             <li class="dropdown">
-              <a href="index.html" class="active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="#" class="active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 Home Views
               </a>
               <ul class="dropdown-menu shadow border-0 rounded-3 p-2">
-                <li><a class="dropdown-item py-2 fw-bold text-coral active bg-light" href="index.html"><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 — Classic SaaS</a></li>
+                <li><a class="dropdown-item py-2 fw-bold text-coral active" href="index.html"><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 — Classic SaaS</a></li>
                 <li><a class="dropdown-item py-2 fw-semibold" href="home-2.html"><i class="bi bi-cpu-fill me-2"></i> Home 2 — AI Autonomous</a></li>
               </ul>
             </li>
@@ -102,18 +103,20 @@
     </div>
 
     <ul class="mobile-nav-list">
+      <li class="mobile-nav-section-title">HOME VIEWS</li>
       <li>
         <a href="index.html" class="mobile-nav-link active">
-          <span><i class="bi bi-layout-text-window-reverse me-2 text-coral"></i> Home 1 (Classic)</span>
+          <span><i class="bi bi-layout-text-window-reverse me-2 text-coral"></i> Home 1 (Classic SaaS)</span>
           <i class="bi bi-chevron-right text-muted"></i>
         </a>
       </li>
       <li>
         <a href="home-2.html" class="mobile-nav-link">
-          <span><i class="bi bi-cpu-fill me-2"></i> Home 2 (AI Autonomous)</span>
+          <span><i class="bi bi-cpu-fill me-2 text-coral"></i> Home 2 (AI Autonomous)</span>
           <span class="badge bg-danger rounded-pill">New</span>
         </a>
       </li>
+      <li class="mobile-nav-section-title">NAVIGATION</li>
       <li>
         <a href="features.html" class="mobile-nav-link">
           <span><i class="bi bi-stars me-2"></i> Features</span>
@@ -128,7 +131,7 @@
       </li>
       <li>
         <a href="pricing.html" class="mobile-nav-link">
-          <span><i class="bi bi-tag me-2"></i> Pricing Plans</span>
+          <span><i class="bi bi-tag me-2"></i> Pricing</span>
           <i class="bi bi-chevron-right text-muted"></i>
         </a>
       </li>
@@ -138,32 +141,14 @@
           <i class="bi bi-chevron-right text-muted"></i>
         </a>
       </li>
-      <li>
-        <a href="login.html" class="mobile-nav-link">
-          <span><i class="bi bi-box-arrow-in-right me-2 text-primary"></i> Client / Staff Login</span>
-          <i class="bi bi-chevron-right text-muted"></i>
-        </a>
-      </li>
-      <li>
-        <a href="register.html" class="mobile-nav-link">
-          <span><i class="bi bi-person-plus-fill me-2 text-coral"></i> Register Practice</span>
-          <span class="badge bg-success rounded-pill">Free Trial</span>
-        </a>
-      </li>
-      <li>
-        <a href="dashboard.html" class="mobile-nav-link">
-          <span><i class="bi bi-grid-1x2-fill me-2 text-coral"></i> Business Dashboard</span>
-          <span class="badge bg-danger rounded-pill">Live App</span>
-        </a>
-      </li>
     </ul>
 
     <div class="mobile-drawer-actions">
-      <a href="register.html" class="btn-krono-primary w-100 text-center">
-        Start 14-Day Free Trial <i class="bi bi-arrow-right"></i>
+      <a href="dashboard.html" class="btn-krono-primary w-100 text-center">
+        Open Workspace <i class="bi bi-arrow-right-short"></i>
       </a>
       <a href="login.html" class="btn-krono-dark w-100 text-center">
-        <i class="bi bi-box-arrow-in-right"></i> Client Sign In
+        <i class="bi bi-box-arrow-in-right"></i> Client Login
       </a>
       <div class="text-center mt-2">
         <small class="text-muted"><i class="bi bi-shield-check text-success"></i> 14-Day Free Trial • No Credit Card</small>

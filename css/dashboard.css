@@ -83,6 +83,85 @@
   color: #C2CDD8 !important;
 }
 
+/* Dashboard Dark Theme Action Buttons & Contrast System */
+[data-theme="dark"] .btn-outline-dark {
+  color: #FFFFFF !important;
+  border-color: #4A5568 !important;
+  background-color: #1F242C !important;
+}
+[data-theme="dark"] .btn-outline-dark:hover {
+  background-color: var(--color-coral) !important;
+  border-color: var(--color-coral) !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .btn-outline-secondary {
+  color: #CBD5E1 !important;
+  border-color: #4A5568 !important;
+  background-color: #1A1D22 !important;
+}
+[data-theme="dark"] .btn-outline-secondary:hover {
+  background-color: var(--color-coral) !important;
+  border-color: var(--color-coral) !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .appt-filter-pill.active {
+  background-color: var(--color-coral) !important;
+  border-color: var(--color-coral) !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .status-badge.confirmed {
+  background: rgba(39, 201, 63, 0.2) !important;
+  color: #4ADE80 !important;
+  border: 1px solid rgba(39, 201, 63, 0.4) !important;
+}
+[data-theme="dark"] .status-badge.pending {
+  background: rgba(251, 191, 36, 0.2) !important;
+  color: #FDE047 !important;
+  border: 1px solid rgba(251, 191, 36, 0.4) !important;
+}
+[data-theme="dark"] .status-badge.completed {
+  background: rgba(165, 180, 252, 0.2) !important;
+  color: #C7D2FE !important;
+  border: 1px solid rgba(165, 180, 252, 0.4) !important;
+}
+[data-theme="dark"] .status-badge.cancelled {
+  background: rgba(255, 107, 95, 0.2) !important;
+  color: #FFA29A !important;
+  border: 1px solid rgba(255, 107, 95, 0.4) !important;
+}
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: #1A1D22 !important;
+  border-color: #2C313A !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .form-control::placeholder {
+  color: #718096 !important;
+}
+[data-theme="dark"] .dash-table-card .bg-light,
+[data-theme="dark"] .staff-card,
+[data-theme="dark"] .bg-light.border {
+  background-color: #1A1D22 !important;
+  border-color: #2C313A !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .dash-table-card .border-bottom {
+  border-color: #2C313A !important;
+}
+[data-theme="dark"] .table {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+  border-color: #2C313A !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .small.text-dark,
+[data-theme="dark"] small.text-dark {
+  color: #CBD5E1 !important;
+}
+
+
 /* Dashboard App Layout Container */
 .dashboard-layout {
   display: flex;

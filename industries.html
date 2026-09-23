@@ -6,6 +6,8 @@
   <title>Industries — Healthcare, Salons, Consulting, Fitness & Education | SYNCRA</title>
   <meta name="description" content="Tailored scheduling solutions for Healthcare, Salons, Consulting, Fitness, Education, and Professional Services. See how Syncra automates your exact operational model.">
   
+  <!-- Favicon / Fonts -->
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +21,7 @@
 
   <!-- Site Header (<= 1024px: Logo + Hamburger Only) -->
   <header class="site-header">
-    <div class="container-fluid px-3 px-lg-4 px-xl-5 header-container">
+    <div class="container header-container">
       <a href="index.html" class="brand-logo">
         <div class="logo-icon"><i class="bi bi-calendar4-week"></i></div>
         <span>SYNCRA<span class="dot">.</span></span>
@@ -29,7 +31,7 @@
         <nav>
           <ul class="desktop-nav-links">
             <li class="dropdown">
-              <a href="index.html" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 Home Views
               </a>
               <ul class="dropdown-menu shadow border-0 rounded-3 p-2">
@@ -84,26 +86,28 @@
     </div>
 
     <ul class="mobile-nav-list">
-      <li><a href="index.html" class="mobile-nav-link"><span><i class="bi bi-layout-text-window-reverse me-2"></i> Home 1 (Classic)</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li class="mobile-nav-section-title">HOME VIEWS</li>
+      <li><a href="index.html" class="mobile-nav-link"><span><i class="bi bi-layout-text-window-reverse me-2 text-coral"></i> Home 1 (Classic SaaS)</span><i class="bi bi-chevron-right text-muted"></i></a></li>
       <li><a href="home-2.html" class="mobile-nav-link"><span><i class="bi bi-cpu-fill me-2 text-coral"></i> Home 2 (AI Autonomous)</span><span class="badge bg-danger rounded-pill">New</span></a></li>
+      <li class="mobile-nav-section-title">NAVIGATION</li>
       <li><a href="features.html" class="mobile-nav-link"><span><i class="bi bi-stars me-2"></i> Features</span><i class="bi bi-chevron-right text-muted"></i></a></li>
       <li><a href="industries.html" class="mobile-nav-link active"><span><i class="bi bi-building me-2"></i> Industries</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="pricing.html" class="mobile-nav-link"><span><i class="bi bi-tag me-2"></i> Pricing Plans</span><i class="bi bi-chevron-right text-muted"></i></a></li>
+      <li><a href="pricing.html" class="mobile-nav-link"><span><i class="bi bi-tag me-2"></i> Pricing</span><i class="bi bi-chevron-right text-muted"></i></a></li>
       <li><a href="about.html" class="mobile-nav-link"><span><i class="bi bi-info-circle me-2"></i> About & Resources</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="login.html" class="mobile-nav-link"><span><i class="bi bi-box-arrow-in-right me-2 text-primary"></i> Client / Staff Login</span><i class="bi bi-chevron-right text-muted"></i></a></li>
-      <li><a href="register.html" class="mobile-nav-link"><span><i class="bi bi-person-plus-fill me-2 text-coral"></i> Register Practice</span><span class="badge bg-success rounded-pill">Free Trial</span></a></li>
-      <li><a href="dashboard.html" class="mobile-nav-link"><span><i class="bi bi-grid-1x2-fill me-2 text-coral"></i> Business Dashboard</span><span class="badge bg-danger rounded-pill">Live App</span></a></li>
     </ul>
 
     <div class="mobile-drawer-actions">
-      <a href="register.html" class="btn-krono-primary w-100 text-center">Start 14-Day Free Trial <i class="bi bi-arrow-right"></i></a>
-      <a href="login.html" class="btn-krono-dark w-100 text-center"><i class="bi bi-box-arrow-in-right"></i> Client Sign In</a>
+      <a href="dashboard.html" class="btn-krono-primary w-100 text-center">Open Workspace <i class="bi bi-arrow-right-short"></i></a>
+      <a href="login.html" class="btn-krono-dark w-100 text-center"><i class="bi bi-box-arrow-in-right"></i> Client Login</a>
+      <div class="text-center mt-2">
+        <small class="text-muted"><i class="bi bi-shield-check text-success"></i> 14-Day Free Trial • No Credit Card</small>
+      </div>
     </div>
   </div>
 
   <!-- Hero Header -->
-  <section class="section-py text-center position-relative overflow-hidden" style="background: linear-gradient(180deg, #F7F6F2 0%, #FFFFFF 100%);">
-    <div class="container position-relative" style="z-index: 2;" data-aos="fade-up">
+  <section class="subpage-hero hero-industries text-center">
+    <div class="container" data-aos="fade-up">
       <div class="badge-tag coral mb-3">Customized Industry Solutions</div>
       <h1 class="display-hero mb-3">Engineered for Your Specific Practice</h1>
       <p class="lead-lg mx-auto" style="max-width: 760px;">
@@ -118,38 +122,38 @@
       <div class="d-flex flex-column gap-5">
 
         <!-- 1. Healthcare & Clinics -->
-        <div class="card-krono p-4 p-lg-5" data-aos="fade-up">
-          <div class="row align-items-center g-4">
+        <div class="card-krono industry-detail-card p-4 p-lg-5 text-start" data-aos="fade-up">
+          <div class="row align-items-center g-4 g-lg-5">
             <div class="col-lg-6">
               <div class="badge-tag coral mb-3">Healthcare & Medical</div>
               <h2 class="h2 fw-bold mb-3">Medical Practices & Outpatient Clinics</h2>
-              <p class="lead-lg" style="font-size: 1.05rem;">
+              <p class="lead-lg text-muted mb-4" style="font-size: 1.05rem;">
                 HIPAA-ready appointment scheduling with integrated digital intake forms, pre-visit screening questionnaires, physician room allocation, and automated telehealth video room generation.
               </p>
               <div class="row g-3 mb-4">
                 <div class="col-6">
-                  <div class="p-3 bg-light rounded-3">
-                    <div class="fw-bold text-coral">99.4%</div>
+                  <div class="p-3 bg-light rounded-3 border">
+                    <div class="fw-bold fs-4 text-coral">99.4%</div>
                     <small class="text-muted">Attendance Rate</small>
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="p-3 bg-light rounded-3">
-                    <div class="fw-bold text-dark">8.2 hrs</div>
+                  <div class="p-3 bg-light rounded-3 border">
+                    <div class="fw-bold fs-4 text-ink">8.2 hrs</div>
                     <small class="text-muted">Saved / Doctor / Wk</small>
                   </div>
                 </div>
               </div>
-              <button class="btn-krono-dark" onclick="openQuickBookModal('Healthcare Consultation Flow')">Test Patient Booking Flow</button>
+              <button class="btn-krono-dark" onclick="openQuickBookModal('Healthcare Consultation Flow')">Test Patient Booking Flow <i class="bi bi-arrow-right ms-1"></i></button>
             </div>
             <div class="col-lg-6">
               <div class="p-4 bg-light rounded-4 border">
                 <h5 class="fw-bold mb-3"><i class="bi bi-shield-check text-coral"></i> Key Healthcare Features:</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 text-muted fw-semibold mb-0">
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> HIPAA-compliant secure intake questionnaires</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Buffer times for room sanitization between patients</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> 2-way EHR sync & physician shift management</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Automated 24h & 2h SMS reminders with reply confirmation</li>
+                <ul class="list-unstyled d-flex flex-column gap-3 text-muted fw-semibold mb-0">
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>HIPAA-compliant secure intake questionnaires</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Buffer times for room sanitization between patients</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>2-way EHR sync & physician shift management</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Automated 24h & 2h SMS reminders with reply confirmation</span></li>
                 </ul>
               </div>
             </div>
@@ -157,38 +161,38 @@
         </div>
 
         <!-- 2. Salons, Spas & Beauty -->
-        <div class="card-krono p-4 p-lg-5" data-aos="fade-up">
-          <div class="row align-items-center g-4">
+        <div class="card-krono industry-detail-card p-4 p-lg-5 text-start" data-aos="fade-up">
+          <div class="row align-items-center g-4 g-lg-5">
             <div class="col-lg-6">
               <div class="badge-tag mint mb-3">Beauty & Wellness</div>
               <h2 class="h2 fw-bold mb-3">Hair Salons, Spas & Aesthetic Studios</h2>
-              <p class="lead-lg" style="font-size: 1.05rem;">
+              <p class="lead-lg text-muted mb-4" style="font-size: 1.05rem;">
                 Delight clients with stylist selection, service add-on upsells (treatments, toners, glosses), automated non-refundable deposits, and Instagram "Book Now" buttons.
               </p>
               <div class="row g-3 mb-4">
                 <div class="col-6">
-                  <div class="p-3 bg-light rounded-3">
-                    <div class="fw-bold text-coral">+42%</div>
+                  <div class="p-3 bg-light rounded-3 border">
+                    <div class="fw-bold fs-4 text-coral">+42%</div>
                     <small class="text-muted">Avg Ticket Upsell</small>
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="p-3 bg-light rounded-3">
-                    <div class="fw-bold text-dark">0%</div>
+                  <div class="p-3 bg-light rounded-3 border">
+                    <div class="fw-bold fs-4 text-ink">0%</div>
                     <small class="text-muted">Double Bookings</small>
                   </div>
                 </div>
               </div>
-              <button class="btn-krono-dark" onclick="openQuickBookModal('Salon Stylist Booking Flow')">Test Salon Flow</button>
+              <button class="btn-krono-dark" onclick="openQuickBookModal('Salon Stylist Booking Flow')">Test Salon Flow <i class="bi bi-arrow-right ms-1"></i></button>
             </div>
             <div class="col-lg-6">
               <div class="p-4 bg-light rounded-4 border">
                 <h5 class="fw-bold mb-3"><i class="bi bi-scissors text-coral"></i> Key Salon Features:</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 text-muted fw-semibold mb-0">
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Stylist chair, wash basin & equipment reservations</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Automated deposit capture to protect against late cancellations</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> 6-week auto-rebooking SMS reminders</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Multi-service cascading time blocks (Color + Blowout)</li>
+                <ul class="list-unstyled d-flex flex-column gap-3 text-muted fw-semibold mb-0">
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Stylist chair, wash basin & equipment reservations</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Automated deposit capture to protect against late cancellations</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>6-week auto-rebooking SMS reminders</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Multi-service cascading time blocks (Color + Blowout)</span></li>
                 </ul>
               </div>
             </div>
@@ -196,38 +200,38 @@
         </div>
 
         <!-- 3. Consulting, Legal & Financial -->
-        <div class="card-krono p-4 p-lg-5" data-aos="fade-up">
-          <div class="row align-items-center g-4">
+        <div class="card-krono industry-detail-card p-4 p-lg-5 text-start" data-aos="fade-up">
+          <div class="row align-items-center g-4 g-lg-5">
             <div class="col-lg-6">
               <div class="badge-tag dark mb-3">Advisory & Legal</div>
               <h2 class="h2 fw-bold mb-3">Consulting, Legal & Financial Advisors</h2>
-              <p class="lead-lg" style="font-size: 1.05rem;">
+              <p class="lead-lg text-muted mb-4" style="font-size: 1.05rem;">
                 Eliminate coordination friction for billable consultations, discovery calls, and retainer reviews with automated Zoom links, upfront payment, and timezone detection.
               </p>
               <div class="row g-3 mb-4">
                 <div class="col-6">
-                  <div class="p-3 bg-light rounded-3">
-                    <div class="fw-bold text-coral">100%</div>
+                  <div class="p-3 bg-light rounded-3 border">
+                    <div class="fw-bold fs-4 text-coral">100%</div>
                     <small class="text-muted">Timezone Accuracy</small>
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="p-3 bg-light rounded-3">
-                    <div class="fw-bold text-dark">Instant</div>
+                  <div class="p-3 bg-light rounded-3 border">
+                    <div class="fw-bold fs-4 text-ink">Instant</div>
                     <small class="text-muted">Video Provisioning</small>
                   </div>
                 </div>
               </div>
-              <button class="btn-krono-dark" onclick="openQuickBookModal('Executive Consulting Session')">Test Advisory Flow</button>
+              <button class="btn-krono-dark" onclick="openQuickBookModal('Executive Consulting Session')">Test Advisory Flow <i class="bi bi-arrow-right ms-1"></i></button>
             </div>
             <div class="col-lg-6">
               <div class="p-4 bg-light rounded-4 border">
                 <h5 class="fw-bold mb-3"><i class="bi bi-briefcase text-coral"></i> Key Consulting Features:</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 text-muted fw-semibold mb-0">
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Dynamic Zoom, Google Meet & Microsoft Teams provisioning</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Paid discovery appointments via Stripe/PayPal</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Round-robin team lead routing for inbound prospects</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Automated NDA and document upload pre-call</li>
+                <ul class="list-unstyled d-flex flex-column gap-3 text-muted fw-semibold mb-0">
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Dynamic Zoom, Google Meet & Microsoft Teams provisioning</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Paid discovery appointments via Stripe/PayPal</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Round-robin team lead routing for inbound prospects</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Automated NDA and document upload pre-call</span></li>
                 </ul>
               </div>
             </div>
@@ -235,24 +239,24 @@
         </div>
 
         <!-- 4. Fitness Studios & Personal Trainers -->
-        <div class="card-krono p-4 p-lg-5" data-aos="fade-up">
-          <div class="row align-items-center g-4">
+        <div class="card-krono industry-detail-card p-4 p-lg-5 text-start" data-aos="fade-up">
+          <div class="row align-items-center g-4 g-lg-5">
             <div class="col-lg-6">
               <div class="badge-tag coral mb-3">Fitness & Sports</div>
               <h2 class="h2 fw-bold mb-3">Fitness Studios, Gyms & 1-on-1 Trainers</h2>
-              <p class="lead-lg" style="font-size: 1.05rem;">
+              <p class="lead-lg text-muted mb-4" style="font-size: 1.05rem;">
                 Manage class capacities, spot reservations, personal training packages, waitlist auto-promotions, and member recurring subscriptions in one synchronized portal.
               </p>
-              <button class="btn-krono-dark" onclick="openQuickBookModal('Fitness Class Booking')">Test Studio Flow</button>
+              <button class="btn-krono-dark" onclick="openQuickBookModal('Fitness Class Booking')">Test Studio Flow <i class="bi bi-arrow-right ms-1"></i></button>
             </div>
             <div class="col-lg-6">
               <div class="p-4 bg-light rounded-4 border">
                 <h5 class="fw-bold mb-3"><i class="bi bi-fire text-coral"></i> Key Fitness Features:</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 text-muted fw-semibold mb-0">
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Live class capacity meters & spot counts</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Automatic waitlist SMS ping when spot opens up</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> 10-class pack and recurring membership pass tracking</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Instructor substitute assignment & studio room locking</li>
+                <ul class="list-unstyled d-flex flex-column gap-3 text-muted fw-semibold mb-0">
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Live class capacity meters & spot counts</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Automatic waitlist SMS ping when spot opens up</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>10-class pack and recurring membership pass tracking</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Instructor substitute assignment & studio room locking</span></li>
                 </ul>
               </div>
             </div>
@@ -260,24 +264,24 @@
         </div>
 
         <!-- 5. Higher Education & Tutoring -->
-        <div class="card-krono p-4 p-lg-5" data-aos="fade-up">
-          <div class="row align-items-center g-4">
+        <div class="card-krono industry-detail-card p-4 p-lg-5 text-start" data-aos="fade-up">
+          <div class="row align-items-center g-4 g-lg-5">
             <div class="col-lg-6">
               <div class="badge-tag mint mb-3">Education & Academic</div>
               <h2 class="h2 fw-bold mb-3">Universities, Language Academies & Private Tutors</h2>
-              <p class="lead-lg" style="font-size: 1.05rem;">
+              <p class="lead-lg text-muted mb-4" style="font-size: 1.05rem;">
                 Simplify student office hours, 1-on-1 tutoring sessions, parent-teacher conferences, and lesson material distribution without scheduling chaos.
               </p>
-              <button class="btn-krono-dark" onclick="openQuickBookModal('Office Hours Booking')">Test Academic Flow</button>
+              <button class="btn-krono-dark" onclick="openQuickBookModal('Office Hours Booking')">Test Academic Flow <i class="bi bi-arrow-right ms-1"></i></button>
             </div>
             <div class="col-lg-6">
               <div class="p-4 bg-light rounded-4 border">
                 <h5 class="fw-bold mb-3"><i class="bi bi-mortarboard text-coral"></i> Key Education Features:</h5>
-                <ul class="list-unstyled d-flex flex-column gap-2 text-muted fw-semibold mb-0">
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Student portal with lesson history & notes</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Canvas & Google Classroom integrations</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Multi-student group workshop slots</li>
-                  <li><i class="bi bi-check2-circle text-success me-2"></i> Automated homework and preparation reminders</li>
+                <ul class="list-unstyled d-flex flex-column gap-3 text-muted fw-semibold mb-0">
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Student portal with lesson history & notes</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Canvas & Google Classroom integrations</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Multi-student group workshop slots</span></li>
+                  <li><i class="bi bi-check2-circle text-success fs-5"></i> <span>Automated homework and preparation reminders</span></li>
                 </ul>
               </div>
             </div>
@@ -302,13 +306,73 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a href="index.html" class="brand-logo mb-3 d-inline-flex text-white">
+            <div class="logo-icon bg-coral text-white">
+              <i class="bi bi-calendar4-week"></i>
+            </div>
+            <span>SYNCRA<span class="dot">.</span></span>
+          </a>
+          <p class="text-white-50 pe-lg-4" style="color: #D1D8E0 !important;">
+            “Time, Designed.” The next-generation appointment scheduling & booking platform built for modern service businesses.
+          </p>
+          <div class="d-flex gap-3 text-white-50 mt-3">
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="GitHub"><i class="bi bi-github fs-5"></i></a>
+            <a href="#" class="text-white-50" style="color: #A9B7C6 !important;" aria-label="YouTube"><i class="bi bi-youtube fs-5"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="features.html">Smart Scheduling</a></li>
+            <li><a href="features.html">Calendar Sync</a></li>
+            <li><a href="features.html">Staff Availability</a></li>
+            <li><a href="features.html">Multi-Channel Reminders</a></li>
+            <li><a href="features.html">Payment Gateways</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Industries</div>
+          <ul class="footer-links">
+            <li><a href="industries.html">Healthcare & Clinics</a></li>
+            <li><a href="industries.html">Salons & Spas</a></li>
+            <li><a href="industries.html">Consulting & Legal</a></li>
+            <li><a href="industries.html">Fitness & Studios</a></li>
+            <li><a href="industries.html">Higher Education</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About Syncra</a></li>
+            <li><a href="about.html">Leadership & Story</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="about.html">Customer Guides</a></li>
+            <li><a href="about.html">Security & HIPAA</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Workspace</div>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Live Dashboard</a></li>
+            <li><a href="dashboard.html">Client Portal</a></li>
+            <li><a href="dashboard.html">Calendar Grid</a></li>
+            <li><a href="dashboard.html">Billing Center</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>© 2026 Syncra Inc. “Every Appointment. Automatically Organized.”</div>
-        <div class="d-flex gap-4">
-          <a href="index.html">Home</a>
-          <a href="features.html">Features</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="dashboard.html">Dashboard</a>
+        <div>© 2026 Syncra Inc. “Every Appointment. Automatically Organized.” All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3 mt-2 mt-md-0">
+          <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-2 py-1 small">● Systems Operational</span>
         </div>
       </div>
     </div>
