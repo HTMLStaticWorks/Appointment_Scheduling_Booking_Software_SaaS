@@ -1305,6 +1305,21 @@ img {
   align-items: center;
   gap: 0.75rem;
 }
+.schedule-user-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #17191C !important;
+  line-height: 1.25;
+}
+.schedule-user-pill small {
+  color: #68717C !important;
+}
+[data-theme="dark"] .schedule-user-name {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .schedule-user-pill small {
+  color: #9CA3AF !important;
+}
 .schedule-avatar {
   width: 42px;
   height: 42px;
@@ -2675,10 +2690,12 @@ div.bg-dark,
 .reminder-flow-container,
 .grid-sync-board,
 .site-footer,
-section[style*="#17191C"],
-div[style*="#17191C"],
 section[style*="background-color: #17191C"],
-div[style*="background-color: #17191C"] {
+div[style*="background-color: #17191C"],
+section[style*="background: #17191C"],
+div[style*="background: #17191C"],
+section[style*="background:#17191C"],
+div[style*="background:#17191C"] {
   color: #FFFFFF !important;
 }
 
@@ -2693,9 +2710,9 @@ section.bg-dark .display-title, section.bg-dark .display-hero,
 .grid-sync-board h1, .grid-sync-board h2, .grid-sync-board h3,
 .site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6,
 .site-footer .footer-title,
-section[style*="#17191C"] h1, section[style*="#17191C"] h2, section[style*="#17191C"] h3, section[style*="#17191C"] h4,
-section[style*="#17191C"] .display-title,
-div[style*="#17191C"] h1, div[style*="#17191C"] h2, div[style*="#17191C"] h3, div[style*="#17191C"] h4 {
+section[style*="background-color: #17191C"] h1, section[style*="background-color: #17191C"] h2, section[style*="background-color: #17191C"] h3, section[style*="background-color: #17191C"] h4,
+section[style*="background-color: #17191C"] .display-title,
+div[style*="background-color: #17191C"] h1, div[style*="background-color: #17191C"] h2, div[style*="background-color: #17191C"] h3, div[style*="background-color: #17191C"] h4 {
   color: #FFFFFF !important;
 }
 
@@ -2705,8 +2722,8 @@ section.bg-dark p, section.bg-dark .lead-lg, section.bg-dark .lead, section.bg-d
 .reminder-flow-container p, .reminder-flow-container .lead-lg, .reminder-flow-container .lead, .reminder-flow-container .text-muted, .reminder-flow-container .text-light,
 .grid-sync-board p, .grid-sync-board .lead, .grid-sync-board .text-muted,
 .site-footer p, .site-footer .text-muted, .site-footer .text-light,
-section[style*="#17191C"] p, section[style*="#17191C"] .lead-lg, section[style*="#17191C"] .lead, section[style*="#17191C"] .text-muted, section[style*="#17191C"] .text-light,
-div[style*="#17191C"] p, div[style*="#17191C"] .lead-lg, div[style*="#17191C"] .lead, div[style*="#17191C"] .text-muted, div[style*="#17191C"] .text-light {
+section[style*="background-color: #17191C"] p, section[style*="background-color: #17191C"] .lead-lg, section[style*="background-color: #17191C"] .lead, section[style*="background-color: #17191C"] .text-muted, section[style*="background-color: #17191C"] .text-light,
+div[style*="background-color: #17191C"] p, div[style*="background-color: #17191C"] .lead-lg, div[style*="background-color: #17191C"] .lead, div[style*="background-color: #17191C"] .text-muted, div[style*="background-color: #17191C"] .text-light {
   color: #D1D8E0 !important;
 }
 
