@@ -911,6 +911,32 @@ img {
   color: var(--color-coral);
 }
 
+a.brand-logo {
+  text-decoration: none;
+}
+a.brand-logo:hover {
+  text-decoration: none;
+  color: var(--color-ink);
+  opacity: 0.95;
+}
+[data-theme="dark"] a.brand-logo,
+[data-theme="dark"] a.brand-logo:hover {
+  color: #FFFFFF !important;
+}
+
+.auth-card .brand-logo,
+.register-card .brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+.auth-card .brand-logo:hover,
+.register-card .brand-logo:hover {
+  transform: translateY(-2px);
+}
+
 /* Desktop Nav (> 1024px) - Strictly single horizontal straight line */
 .desktop-nav-wrap {
   display: flex;
