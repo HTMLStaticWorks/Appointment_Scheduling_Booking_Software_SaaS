@@ -1363,7 +1363,15 @@ img {
 .slot-block.booked {
   background: #F4F3EE;
   border: 1px solid var(--color-border);
-  color: var(--color-ink);
+  color: #17191C !important;
+}
+.slot-block.booked .slot-title,
+.slot-block.booked div:not(.slot-desc):not(.text-muted) {
+  color: #17191C !important;
+}
+.slot-block.booked .slot-desc,
+.slot-block.booked .text-muted {
+  color: #555E68 !important;
 }
 
 .slot-block.meeting {
@@ -2332,6 +2340,203 @@ h1,
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ==========================================================================
+   LEFT-ALIGNED SECTIONS SYSTEM (Specific Overrides for Hero & Split Layouts)
+   ========================================================================== */
+
+/* 1. Homepage 1 Hero */
+.hero-section .display-hero,
+.hero-section h1 {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.hero-section .badge-tag {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.hero-section p.lead-lg,
+.hero-section p {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* 2. Homepage 1 Reminder Sequence */
+.reminder-flow-container .display-title,
+.reminder-flow-container h2 {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.reminder-flow-container .badge-tag {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.reminder-flow-container p,
+.reminder-flow-container .lead-lg {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* 3. Homepage 1 Integrations Heading */
+.integration-content-col .display-title,
+.integration-content-col h2,
+.integration-section .col-lg-5 .display-title,
+.integration-section .col-lg-5 h2 {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.integration-content-col .badge-tag,
+.integration-section .col-lg-5 .badge-tag {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.integration-content-col p.lead-lg,
+.integration-section .col-lg-5 p.lead-lg {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* 4. Homepage 2 Hero Section */
+.home2-hero .display-hero,
+.home2-hero h1 {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.home2-hero .ai-radar-pill {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.home2-hero p.lead-lg,
+.home2-hero p {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* 5. Features Page Section Above Footer */
+.feature-booking-experience .display-title,
+.feature-booking-experience h2 {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.feature-booking-experience .badge-tag {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.feature-booking-experience p.lead-lg,
+.feature-booking-experience p {
+  text-align: left !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Hero Highlight Text High-Contrast Class */
+.hero-highlight-text {
+  color: #FF5A4D !important;
+  text-decoration: underline !important;
+  text-decoration-color: #1E6B52 !important;
+  text-underline-offset: 8px !important;
+  text-decoration-thickness: 3px !important;
+  font-weight: 800;
+  display: inline-block;
+}
+[data-theme="dark"] .hero-highlight-text {
+  color: #FF7B70 !important;
+  text-decoration-color: #27C93F !important;
+}
+
+/* Customer Testimonials System */
+.testimonial-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-coral);
+}
+.testimonial-stars {
+  color: #F59E0B;
+  font-size: 1rem;
+  margin-bottom: 1.15rem;
+  display: flex;
+  gap: 0.25rem;
+}
+.testimonial-quote {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-ink);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.testimonial-author-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+.testimonial-author-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  margin-bottom: 0.15rem;
+}
+.testimonial-author-role {
+  font-size: 0.8rem;
+  color: var(--color-slate);
+}
+
+[data-theme="dark"] .testimonial-card {
+  background-color: #14171A !important;
+  border-color: #2C313A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+[data-theme="dark"] .testimonial-quote,
+[data-theme="dark"] .testimonial-author-name {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .testimonial-author-role {
+  color: #9CA3AF !important;
+}
+[data-theme="dark"] .testimonial-author-wrap {
+  border-color: #2C313A !important;
 }
 
 /* All Subheadings & Intro Leads */

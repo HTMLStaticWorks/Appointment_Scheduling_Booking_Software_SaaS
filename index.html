@@ -177,29 +177,30 @@
       <div class="row align-items-center g-5">
         <!-- Hero Text Column -->
         <div class="col-lg-6" data-aos="fade-up">
-          <div class="badge-tag coral mb-3">
+          <div class="badge-tag coral mb-3 text-start">
             <span class="badge-pulse"></span>
             <span>Concept: “Time, Designed.”</span>
           </div>
 
-          <h1 class="display-hero mb-3">
-            Your calendar should <span class="text-coral"
-              style="text-decoration: underline; text-decoration-color: var(--color-mint); text-underline-offset: 8px;">work
-              for you.</span>
+          <h1 class="display-hero mb-3 text-start">
+            Your calendar should <span class="hero-highlight-text">work for you.</span>
           </h1>
 
-          <p class="lead-lg mb-4">
+          <p class="lead-lg mb-4 text-start">
             “Every Appointment. Automatically Organized.” Replace endless back-and-forth emails with an intelligent
             booking engine that assigns staff, eliminates no-shows, and syncs across every device in real time.
           </p>
 
           <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
-            <a href="dashboard.html" class="btn-krono-primary">
-              <i class="bi bi-calendar-check-fill"></i> Start Free 14-Day Trial
+            <a href="register.html" class="btn-krono-primary">
+              <i class="bi bi-calendar-check-fill"></i> Start Free Trial
             </a>
             <button class="btn-krono-outline" onclick="openQuickBookModal('Interactive Booking Demo')">
-              <i class="bi bi-play-circle-fill text-coral"></i> Try Live Booking Flow
+              <i class="bi bi-play-circle-fill text-coral"></i> Book a Demo
             </button>
+            <a href="features.html" class="btn-krono-ghost">
+              Explore Features <i class="bi bi-arrow-right-short"></i>
+            </a>
           </div>
 
           <div class="d-flex align-items-center gap-4 pt-2">
@@ -255,8 +256,8 @@
                       SM
                     </div>
                     <div>
-                      <div style="font-weight: 700; font-size: 0.9rem; color: #17191C;">Consultation</div>
-                      <div style="font-size: 0.775rem; color: #68717C;">with Sarah Miller • Video Meet</div>
+                      <div class="slot-title" style="font-weight: 700; font-size: 0.9rem; color: #17191C !important;">Consultation</div>
+                      <div class="slot-desc text-muted" style="font-size: 0.775rem; color: #555E68 !important;">with Sarah Miller • Video Meet</div>
                     </div>
                   </div>
                   <span class="slot-badge" style="background: #E5E2D9; color: #17191C;">Confirmed</span>
@@ -413,6 +414,80 @@
   </section>
 
   <!-- ==========================================================================
+       SECTION 2: CALENDAR & BOOKING MANAGEMENT
+       Central Control System: 2-Way Sync, Buffer Times, Multi-Staff Roster
+       ========================================================================== -->
+  <section class="section-py bg-light border-bottom">
+    <div class="container">
+      <div class="row text-center justify-content-center section-title-wrap mb-5">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="badge-tag dark mb-2">Calendar & Booking Control</div>
+          <h2 class="display-title">Intelligent Calendar & Booking Management</h2>
+          <p class="lead-lg">Sync calendars seamlessly across every staff member, automatically prevent double bookings, and give clients a premium booking portal.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <!-- Feature 1: Real-Time 2-Way Sync -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-krono h-100 p-4 border bg-white rounded-4 shadow-sm text-center">
+            <div class="step-icon-wrap mx-auto mb-3 text-coral fs-3 bg-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 58px; height: 58px;">
+              <i class="bi bi-arrow-repeat"></i>
+            </div>
+            <h5 class="fw-bold mb-2">2-Way Calendar Sync</h5>
+            <p class="small text-muted mb-3">Instant bidirectional sync with Google Calendar, Microsoft 365, Outlook, and Apple iCloud. Personal conflicts block business slots automatically.</p>
+            <ul class="text-start small text-muted ps-3 mb-0">
+              <li class="mb-1">Sub-500ms real-time event updates</li>
+              <li class="mb-1">Multi-calendar conflict shielding</li>
+              <li>Eliminates double bookings forever</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 2: Smart Buffer & Sanitization Engine -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-krono h-100 p-4 border bg-white rounded-4 shadow-sm text-center">
+            <div class="step-icon-wrap mx-auto mb-3 text-mint-dark fs-3 bg-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 58px; height: 58px;">
+              <i class="bi bi-hourglass-split"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Automated Time Buffers</h5>
+            <p class="small text-muted mb-3">Ensure staff have breathing room between sessions. Configure pre-appointment prep, room turnaround buffers, and practitioner travel cushions.</p>
+            <ul class="text-start small text-muted ps-3 mb-0">
+              <li class="mb-1">Customizable 5 to 60 min intervals</li>
+              <li class="mb-1">Travel time calculation via Google Maps</li>
+              <li>Prevents burnout and schedule pile-ups</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 3: Staff Dispatch & Pooled Availability -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-krono h-100 p-4 border bg-white rounded-4 shadow-sm text-center">
+            <div class="step-icon-wrap mx-auto mb-3 text-primary fs-3 bg-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 58px; height: 58px;">
+              <i class="bi bi-person-lines-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Multi-Staff Team Matrix</h5>
+            <p class="small text-muted mb-3">Assign appointments via round-robin, seniority priority, or let clients choose their favorite specialist with individual service menus.</p>
+            <ul class="text-start small text-muted ps-3 mb-0">
+              <li class="mb-1">Pooled team availability view</li>
+              <li class="mb-1">Room & equipment resource locks</li>
+              <li>Individual staff logins & Google permissions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center pt-2" data-aos="fade-up">
+        <div class="d-inline-flex flex-wrap align-items-center justify-content-center gap-3">
+          <a href="register.html" class="btn-krono-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+          <button class="btn-krono-outline" onclick="openQuickBookModal('Calendar Management Demo')"><i class="bi bi-play-circle-fill text-coral"></i> Book a Demo</button>
+          <a href="features.html" class="btn-krono-ghost">Explore Features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        SECTION 1: SMART SCHEDULING ENGINE PIPELINE
        Customer chooses time → Availability checked → Staff assigned → Booking confirmed → Reminder sent
        ========================================================================== -->
@@ -492,16 +567,22 @@
     <div class="container">
       <div class="reminder-flow-container" data-aos="zoom-in">
         <div class="row align-items-center g-4">
-          <div class="col-lg-5">
-            <div class="badge-tag coral mb-3">Zero No-Shows Guarantee</div>
-            <h2 class="display-title text-white mb-3">Multi-Channel Reminder Sequence</h2>
-            <p class="text-white-50 mb-4" style="color: #D1D8E0 !important; font-size: 1.05rem;">
+          <div class="col-lg-5 reminder-header-col">
+            <div class="badge-tag coral mb-3 text-start">Zero No-Shows Guarantee</div>
+            <h2 class="display-title text-white mb-3 text-start">Multi-Channel Reminder Sequence</h2>
+            <p class="text-white-50 mb-4 text-start" style="color: #D1D8E0 !important; font-size: 1.05rem;">
               Never lose revenue to forgotten appointments. Our multi-stage confirmation flow nurtures clients via
               email, SMS, and calendar push alerts with interactive 1-tap reschedule keys.
             </p>
-            <div class="d-flex align-items-center gap-3">
-              <a href="features.html" class="btn-krono-primary">
-                View Reminder Customizer <i class="bi bi-arrow-right"></i>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <a href="register.html" class="btn-krono-primary">
+                Start Free Trial <i class="bi bi-arrow-right"></i>
+              </a>
+              <button class="btn-krono-outline text-white border-light" onclick="openQuickBookModal('Reminder Sequence Demo')">
+                <i class="bi bi-play-circle-fill text-coral"></i> Book a Demo
+              </button>
+              <a href="features.html" class="btn-krono-ghost text-white">
+                Explore Features
               </a>
             </div>
           </div>
@@ -588,10 +669,10 @@
   <section class="section-py bg-white border-top">
     <div class="container">
       <div class="row align-items-center g-5">
-        <div class="col-lg-5" data-aos="fade-right">
-          <div class="badge-tag coral mb-3">Ecosystem & Sync</div>
-          <h2 class="display-title mb-3">Syncs with the Tools You Already Use</h2>
-          <p class="lead-lg mb-4">
+        <div class="col-lg-5 integration-content-col" data-aos="fade-right">
+          <div class="badge-tag coral mb-3 text-start">Ecosystem & Sync</div>
+          <h2 class="display-title mb-3 text-start">Syncs with the Tools You Already Use</h2>
+          <p class="lead-lg mb-4 text-start">
             Connect Syncra directly into your existing productivity stack. 2-way sync ensures updates reflect across
             every device in under 500 milliseconds.
           </p>
@@ -606,7 +687,11 @@
               <i class="bi bi-check-circle-fill text-coral"></i> Native Stripe & PayPal Deposit Capture
             </div>
           </div>
-          <a href="features.html" class="btn-krono-dark">Explore All 40+ Integrations</a>
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <a href="register.html" class="btn-krono-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+            <button class="btn-krono-outline" onclick="openQuickBookModal('Integrations Demo')"><i class="bi bi-play-circle-fill text-coral"></i> Book a Demo</button>
+            <a href="features.html" class="btn-krono-ghost">Explore Features</a>
+          </div>
         </div>
 
         <div class="col-lg-7" data-aos="fade-left">
@@ -674,6 +759,265 @@
   </section>
 
   <!-- ==========================================================================
+       SECTION: TRANSPARENT PRICING PLANS
+       ========================================================================== -->
+  <section class="section-py bg-light border-top border-bottom">
+    <div class="container">
+      <div class="row text-center justify-content-center section-title-wrap mb-4">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="badge-tag coral mb-2">Transparent Plans</div>
+          <h2 class="display-title">Simple, Scalable Pricing</h2>
+          <p class="lead-lg">Start free for 14 days. No credit card required. Upgrade, downgrade, or cancel anytime.</p>
+          
+          <div class="pricing-switch-wrap mt-3 d-inline-flex" data-aos="fade-up" data-aos-delay="100">
+            <button class="pricing-switch-btn active" id="pricingMonthlyBtn">Monthly Billing</button>
+            <button class="pricing-switch-btn" id="pricingAnnualBtn">
+              Annual Billing <span class="badge bg-danger ms-1" style="font-size: 0.7rem;">Save 20%</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-stretch justify-content-center">
+        <!-- Starter Plan -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-card h-100">
+            <h4 class="fw-bold mb-1">Starter</h4>
+            <p class="small text-muted mb-0">For solo practitioners and independent consultants starting out.</p>
+            <div class="pricing-price">
+              <span id="starterPrice">$19</span>
+              <span class="pricing-period pricing-period-text">/month</span>
+            </div>
+            <a href="register.html" class="btn-krono-outline w-100 mb-4">Start Free Trial</a>
+            <div class="fw-bold small text-dark mb-2 text-start">Included:</div>
+            <ul class="pricing-feature-list">
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> 1 Staff Member / Specialist</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> Up to 250 Appointments / mo</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> 2-Way Google & Apple Sync</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> Automated Email Reminders</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> Custom Client Booking Link</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Professional Plan (Featured) -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-card featured h-100 position-relative">
+            <span class="pricing-popular-tag">Most Popular</span>
+            <h4 class="fw-bold mb-1 text-white">Professional</h4>
+            <p class="small text-light text-opacity-75 mb-0">For busy practices, salons, and growing teams.</p>
+            <div class="pricing-price text-white">
+              <span id="proPrice">$49</span>
+              <span class="pricing-period pricing-period-text text-light">/month</span>
+            </div>
+            <a href="register.html" class="btn-krono-primary w-100 mb-4">Start Free Trial</a>
+            <div class="fw-bold small text-white mb-2 text-start">Everything in Starter, plus:</div>
+            <ul class="pricing-feature-list">
+              <li class="pricing-feature-item text-white"><i class="bi bi-check2-circle text-white"></i> Up to 5 Staff Members</li>
+              <li class="pricing-feature-item text-white"><i class="bi bi-check2-circle text-white"></i> Unlimited Appointments</li>
+              <li class="pricing-feature-item text-white"><i class="bi bi-check2-circle text-white"></i> 2-Way SMS & WhatsApp Reminders</li>
+              <li class="pricing-feature-item text-white"><i class="bi bi-check2-circle text-white"></i> Round-Robin Staff Routing</li>
+              <li class="pricing-feature-item text-white"><i class="bi bi-check2-circle text-white"></i> Stripe & Apple Pay Deposits</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Business Plan -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-card h-100">
+            <h4 class="fw-bold mb-1">Business</h4>
+            <p class="small text-muted mb-0">For multi-location studios and enterprise clinics.</p>
+            <div class="pricing-price">
+              <span id="busPrice">$99</span>
+              <span class="pricing-period pricing-period-text">/month</span>
+            </div>
+            <button class="btn-krono-dark w-100 mb-4" onclick="openQuickBookModal('Business Tier Demo')">Book a Demo</button>
+            <div class="fw-bold small text-dark mb-2 text-start">Everything in Pro, plus:</div>
+            <ul class="pricing-feature-list">
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> Unlimited Staff & Locations</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> Custom Intake & Consent Forms</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> Multi-Room Resource Booking</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> HIPAA BAA & SOC2 Compliance</li>
+              <li class="pricing-feature-item"><i class="bi bi-check2-circle text-coral"></i> Dedicated Account Manager</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION: CUSTOMER TESTIMONIALS
+       ========================================================================== -->
+  <section class="section-py bg-white">
+    <div class="container">
+      <div class="row text-center justify-content-center section-title-wrap mb-5">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="badge-tag dark mb-2">Verified Customer Proof</div>
+          <h2 class="display-title">Trusted by Over 2,800+ Modern Practices</h2>
+          <p class="lead-lg">See how clinic owners, consultants, and studio founders reclaimed their calendar with Syncra.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Testimonial 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-quote">
+                “Syncra slashed our clinic no-show rate from 18% down to under 2% in the first month. The automated 24h WhatsApp confirmation sequences work like clockwork.”
+              </p>
+            </div>
+            <div class="testimonial-author-wrap">
+              <img src="image/Leadership Portraits0.jpg" alt="Dr. Evelyn Reed" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-author-name">Dr. Evelyn Reed</div>
+                <div class="testimonial-author-role">Medical Director, Apex Health Center</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-quote">
+                “Our legal advisory clients love the clean self-serve booking interface. Upfront Stripe retainer deposits are charged automatically before Zoom links are generated.”
+              </p>
+            </div>
+            <div class="testimonial-author-wrap">
+              <img src="image/testimonial-celeste-ward.jpg" alt="Celeste Ward" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-author-name">Celeste Ward</div>
+                <div class="testimonial-author-role">Managing Partner, Ward & Associates</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-quote">
+                “Coordinating 18 coaches across 3 studios used to take 2 hours every night. Syncra’s smart buffer rules and round-robin dispatch automated our entire operation.”
+              </p>
+            </div>
+            <div class="testimonial-author-wrap">
+              <img src="image/Leadership Portraits1.jpg" alt="Marcus Vance" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-author-name">Marcus Vance</div>
+                <div class="testimonial-author-role">Founder, Kinetic Athletic Studios</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION: FREQUENTLY ASKED QUESTIONS
+       ========================================================================== -->
+  <section class="section-py bg-light border-top border-bottom">
+    <div class="container">
+      <div class="row text-center justify-content-center section-title-wrap mb-5">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="badge-tag coral mb-2">Got Questions?</div>
+          <h2 class="display-title">Frequently Asked Questions</h2>
+          <p class="lead-lg">Everything you need to know about Syncra scheduling, calendar sync, reminders, and billing.</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="accordion shadow-sm rounded-4 overflow-hidden" id="homeFaqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item border-0 border-bottom">
+              <h3 class="accordion-header" id="headingHomeFaq1">
+                <button class="accordion-button fw-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHomeFaq1" aria-expanded="true" aria-controls="collapseHomeFaq1">
+                  How does 2-way calendar sync prevent double bookings?
+                </button>
+              </h3>
+              <div id="collapseHomeFaq1" class="accordion-collapse collapse show" aria-labelledby="headingHomeFaq1" data-bs-parent="#homeFaqAccordion">
+                <div class="accordion-body text-muted pt-0 pb-4">
+                  Syncra integrates directly with Google Calendar, Outlook 365, and Apple iCloud via encrypted webhooks. Whenever an event is added to your personal or work calendar, Syncra blocks that time slot across all client booking pages in under 500 milliseconds.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="accordion-item border-0 border-bottom">
+              <h3 class="accordion-header" id="headingHomeFaq2">
+                <button class="accordion-button collapsed fw-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHomeFaq2" aria-expanded="false" aria-controls="collapseHomeFaq2">
+                  Can clients book appointments without creating a Syncra account?
+                </button>
+              </h3>
+              <div id="collapseHomeFaq2" class="accordion-collapse collapse" aria-labelledby="headingHomeFaq2" data-bs-parent="#homeFaqAccordion">
+                <div class="accordion-body text-muted pt-0 pb-4">
+                  Yes! Syncra offers 100% guest checkout. Clients simply select a service, choose a time, and enter their contact details. Confirmation invites and SMS reminders are delivered instantly with zero login hassle.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item border-0 border-bottom">
+              <h3 class="accordion-header" id="headingHomeFaq3">
+                <button class="accordion-button collapsed fw-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHomeFaq3" aria-expanded="false" aria-controls="collapseHomeFaq3">
+                  How do automated SMS and WhatsApp reminders reduce no-shows?
+                </button>
+              </h3>
+              <div id="collapseHomeFaq3" class="accordion-collapse collapse" aria-labelledby="headingHomeFaq3" data-bs-parent="#homeFaqAccordion">
+                <div class="accordion-body text-muted pt-0 pb-4">
+                  Our multi-channel sequences send reminders 24 hours and 2 hours before the appointment with 1-tap confirmation and reschedule links. Businesses using our automated SMS flows experience an average 94.8% attendance rate.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="accordion-item border-0 border-bottom">
+              <h3 class="accordion-header" id="headingHomeFaq4">
+                <button class="accordion-button collapsed fw-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHomeFaq4" aria-expanded="false" aria-controls="collapseHomeFaq4">
+                  Can I collect upfront deposits or payments during booking?
+                </button>
+              </h3>
+              <div id="collapseHomeFaq4" class="accordion-collapse collapse" aria-labelledby="headingHomeFaq4" data-bs-parent="#homeFaqAccordion">
+                <div class="accordion-body text-muted pt-0 pb-4">
+                  Yes. Syncra connects natively with Stripe and PayPal. You can require full payment, a fixed deposit, or hold a credit card with custom cancellation fee policies.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="accordion-item border-0">
+              <h3 class="accordion-header" id="headingHomeFaq5">
+                <button class="accordion-button collapsed fw-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHomeFaq5" aria-expanded="false" aria-controls="collapseHomeFaq5">
+                  Is Syncra secure and HIPAA compliant?
+                </button>
+              </h3>
+              <div id="collapseHomeFaq5" class="accordion-collapse collapse" aria-labelledby="headingHomeFaq5" data-bs-parent="#homeFaqAccordion">
+                <div class="accordion-body text-muted pt-0 pb-4">
+                  All data is encrypted in transit and at rest using AES-256. For healthcare clinics, our Business and Enterprise tiers include formal HIPAA Business Associate Agreements (BAAs) and SOC2 Type II compliance.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        CTA BANNER
        ========================================================================== -->
   <section class="section-py bg-dark text-white text-center position-relative overflow-hidden"
@@ -685,12 +1029,14 @@
         Join over 2,800+ businesses saving an average of 14 hours per staff member each week with Syncra.
       </p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a href="dashboard.html" class="btn-krono-primary">
-          <i class="bi bi-rocket-takeoff-fill"></i> Launch Live Dashboard Workspace
+        <a href="register.html" class="btn-krono-primary">
+          <i class="bi bi-calendar-check-fill"></i> Start Free Trial
         </a>
-        <a href="pricing.html" class="btn-krono-outline text-white border-light"
-          style="color: #FFFFFF !important; border-color: rgba(255,255,255,0.6) !important;">
-          Compare Pricing Plans
+        <button class="btn-krono-outline text-white border-light" style="color: #FFFFFF !important; border-color: rgba(255,255,255,0.6) !important;" onclick="openQuickBookModal('Executive CTA Demo')">
+          <i class="bi bi-play-circle-fill text-coral"></i> Book a Demo
+        </button>
+        <a href="features.html" class="btn-krono-ghost text-white">
+          Explore Features <i class="bi bi-arrow-right-short"></i>
         </a>
       </div>
     </div>

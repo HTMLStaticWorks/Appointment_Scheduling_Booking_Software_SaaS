@@ -134,6 +134,15 @@
             <span class="dash-nav-label">Settings</span>
           </div>
         </a>
+
+        <div class="dash-nav-section-label mt-3">Account & Session</div>
+        <a href="index.html" class="dash-nav-item dash-nav-logout" title="Exit to Home">
+          <div class="dash-nav-item-left">
+            <i class="bi bi-box-arrow-left text-danger"></i>
+            <span class="dash-nav-label text-danger fw-bold">Log Out</span>
+          </div>
+          <span class="badge bg-secondary bg-opacity-25 text-muted" style="font-size: 0.65rem;">Home</span>
+        </a>
       </nav>
 
       <!-- Sidebar Footer -->
@@ -159,16 +168,16 @@
     <main class="dash-main">
       <!-- Topbar Header -->
       <header class="dash-topbar">
-        <div class="d-flex align-items-center gap-3">
-          <button class="dash-icon-btn dash-mobile-toggle" id="dashMobileToggle" aria-label="Toggle Sidebar Menu">
+        <div class="dash-topbar-left d-flex align-items-center gap-2 flex-grow-1 overflow-hidden me-2">
+          <button class="dash-icon-btn dash-mobile-toggle flex-shrink-0" id="dashMobileToggle" aria-label="Toggle Sidebar Menu">
             <i class="bi bi-list fs-5"></i>
           </button>
-          <div>
-            <h5 class="mb-0 fw-bold" id="dashCurrentViewTitle">Dashboard Overview</h5>
+          <div class="overflow-hidden">
+            <h5 class="mb-0 fw-bold text-truncate" id="dashCurrentViewTitle">Dashboard Overview</h5>
           </div>
         </div>
 
-        <div class="d-flex align-items-center gap-3">
+        <div class="dash-topbar-actions d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
           <!-- RTL Direction Switcher -->
           <button class="nav-tool-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
             <i class="bi bi-arrow-left-right"></i>
@@ -183,7 +192,7 @@
             <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
           </button>
 
-          <button class="btn-krono-primary p-0 rounded-circle" style="width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.15rem;" onclick="openQuickBookModal('New Dashboard Appointment')" title="New Appointment" aria-label="New Appointment">
+          <button class="btn-krono-primary p-0 rounded-circle" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.05rem;" onclick="openQuickBookModal('New Dashboard Appointment')" title="New Appointment" aria-label="New Appointment">
             <i class="bi bi-plus-lg"></i>
           </button>
         </div>
@@ -587,12 +596,12 @@
         <!-- TAB 4: CUSTOMERS -->
         <div class="dash-tab-pane d-none" id="tab-customers">
           <div class="dash-table-card p-4">
-            <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-3 mb-4">
               <div>
-                <h4 class="fw-bold mb-0">Client Directory</h4>
-                <small class="text-muted">Manage client records, booking history, lifetime revenue, and communication preferences.</small>
+                <h4 class="fw-bold mb-1">Client Directory</h4>
+                <small class="text-muted d-block">Manage client records, booking history, lifetime revenue, and communication preferences.</small>
               </div>
-              <button class="btn-krono-primary btn-sm-krono" onclick="alert('Client profile creation form opened.')"><i class="bi bi-person-plus"></i> Add New Client</button>
+              <button class="btn-krono-primary btn-sm-krono flex-shrink-0" onclick="alert('Client profile creation form opened.')"><i class="bi bi-person-plus me-1"></i> Add New Client</button>
             </div>
 
             <div class="table-responsive">
@@ -656,12 +665,12 @@
         <!-- TAB 5: STAFF -->
         <div class="dash-tab-pane d-none" id="tab-staff">
           <div class="dash-table-card p-4">
-            <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-3 mb-4">
               <div>
-                <h4 class="fw-bold mb-0">Practitioners & Team Roster</h4>
-                <small class="text-muted">18 Active Team Members with individualized working hours and round-robin weights.</small>
+                <h4 class="fw-bold mb-1">Practitioners & Team Roster</h4>
+                <small class="text-muted d-block">18 Active Team Members with individualized working hours and round-robin weights.</small>
               </div>
-              <button class="btn-krono-primary btn-sm-krono" onclick="alert('Staff invite dialog opened.')"><i class="bi bi-person-plus-fill"></i> Invite Staff Member</button>
+              <button class="btn-krono-primary btn-sm-krono flex-shrink-0" onclick="alert('Staff invite dialog opened.')"><i class="bi bi-person-plus-fill me-1"></i> Invite Staff Member</button>
             </div>
 
             <div class="row g-4">
