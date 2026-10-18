@@ -164,8 +164,15 @@ function initHeroInteractiveCalendar() {
     const client = sampleClients[bookedCount % sampleClients.length];
     bookedCount++;
 
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const darkBgs = {
+      "#1E6B52": "rgba(30, 107, 82, 0.25)",
+      "#4C1D95": "rgba(99, 102, 241, 0.2)",
+      "#B45309": "rgba(180, 83, 9, 0.25)"
+    };
+
     slotAvailable.style.transition = 'all 0.4s ease';
-    slotAvailable.style.backgroundColor = client.bg;
+    slotAvailable.style.backgroundColor = isDark ? (darkBgs[client.color] || 'rgba(255,255,255,0.08)') : client.bg;
     slotAvailable.style.borderColor = client.color;
     slotAvailable.innerHTML = `
       <div class="slot-client-info">
@@ -173,8 +180,8 @@ function initHeroInteractiveCalendar() {
           ${client.name.split(' ').map(n=>n[0]).join('')}
         </div>
         <div>
-          <div style="font-weight: 700; font-size: 0.9rem;">${client.service}</div>
-          <div style="font-size: 0.775rem; color: var(--color-slate); opacity: 0.9;">with ${client.name}</div>
+          <div style="font-weight: 700; font-size: 0.9rem; color: ${isDark ? '#FFFFFF' : '#17191C'};">${client.service}</div>
+          <div style="font-size: 0.775rem; color: ${isDark ? '#9CA3AF' : 'var(--color-slate)'};">with ${client.name}</div>
         </div>
       </div>
       <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -195,6 +202,7 @@ function initHeroInteractiveCalendar() {
       if (!slotAvailable) return;
       slotAvailable.style.backgroundColor = '';
       slotAvailable.style.borderColor = '#FF6B5F';
+      const isDarkNow = document.documentElement.getAttribute('data-theme') === 'dark';
       slotAvailable.innerHTML = `
         <div class="slot-client-info">
           <div style="width: 32px; height: 32px; border-radius: 50%; border: 2px dashed #FF6B5F; display: flex; align-items: center; justify-content: center; color: #FF6B5F; font-size: 0.9rem;">
@@ -202,7 +210,7 @@ function initHeroInteractiveCalendar() {
           </div>
           <div>
             <div style="font-weight: 700; font-size: 0.9rem; color: #FF6B5F;">Available for Auto-Booking</div>
-            <div style="font-size: 0.775rem; color: var(--color-slate); opacity: 0.9;">AI Smart Match Active</div>
+            <div class="slot-available-sub" style="font-size: 0.775rem; color: ${isDarkNow ? '#9CA3AF' : '#68717C'};">AI Smart Match Active</div>
           </div>
         </div>
         <button class="btn btn-sm" style="background: #FF6B5F; color: white; border-radius: 20px; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem;" onclick="openQuickBookModal('12:00 PM')">

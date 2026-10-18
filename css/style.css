@@ -190,8 +190,25 @@
   border-color: #2C313A !important;
   color: #FFFFFF !important;
 }
-[data-theme="dark"] .slot-block.booked div {
+[data-theme="dark"] .slot-block.booked .slot-title,
+[data-theme="dark"] .slot-block.booked .fw-bold {
   color: #FFFFFF !important;
+}
+[data-theme="dark"] .slot-block.booked .slot-desc {
+  color: #9CA3AF !important;
+}
+[data-theme="dark"] .slot-avatar-initials {
+  background-color: #2E384D !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+[data-theme="dark"] .slot-badge-confirmed {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #E2E8F0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+[data-theme="dark"] .slot-available-sub {
+  color: #9CA3AF !important;
 }
 [data-theme="dark"] .slot-block.meeting {
   background: rgba(99, 102, 241, 0.18) !important;
@@ -1334,11 +1351,11 @@ a.brand-logo:hover {
 .schedule-user-name {
   font-weight: 700;
   font-size: 0.95rem;
-  color: #17191C !important;
+  color: var(--color-ink, #17191C);
   line-height: 1.25;
 }
 .schedule-user-pill small {
-  color: #68717C !important;
+  color: #68717C;
 }
 [data-theme="dark"] .schedule-user-name {
   color: #FFFFFF !important;
@@ -1404,15 +1421,33 @@ a.brand-logo:hover {
 .slot-block.booked {
   background: #F4F3EE;
   border: 1px solid var(--color-border);
-  color: #17191C !important;
+  color: #17191C;
 }
-.slot-block.booked .slot-title,
-.slot-block.booked div:not(.slot-desc):not(.text-muted) {
-  color: #17191C !important;
+.slot-block.booked .slot-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #17191C;
 }
-.slot-block.booked .slot-desc,
-.slot-block.booked .text-muted {
-  color: #555E68 !important;
+.slot-block.booked .slot-desc {
+  font-size: 0.775rem;
+  color: #555E68;
+}
+.slot-avatar-initials {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #17191C;
+  color: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.slot-badge-confirmed {
+  background: #E5E2D9;
+  color: #17191C;
 }
 
 .slot-block.meeting {
